@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31030FC01A8DAC14001FAFD9 /* PPExtractor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31030FBF1A8DAC14001FAFD9 /* PPExtractor.h */; };
+		31030FC21A8DAC14001FAFD9 /* PPExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FC11A8DAC14001FAFD9 /* PPExtractor.m */; };
+		31030FC81A8DAC14001FAFD9 /* libPPExtractor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31030FBC1A8DAC14001FAFD9 /* libPPExtractor.a */; };
+		31030FD71A8DAD0E001FAFD9 /* PPExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FD61A8DAD0E001FAFD9 /* PPExtractorTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		31030FC91A8DAC14001FAFD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31030FB41A8DAC14001FAFD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31030FBB1A8DAC14001FAFD9;
+			remoteInfo = PPExtractor;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		31030FBA1A8DAC14001FAFD9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				31030FC01A8DAC14001FAFD9 /* PPExtractor.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		31030FBC1A8DAC14001FAFD9 /* libPPExtractor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPPExtractor.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		31030FBF1A8DAC14001FAFD9 /* PPExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPExtractor.h; sourceTree = "<group>"; };
+		31030FC11A8DAC14001FAFD9 /* PPExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPExtractor.m; sourceTree = "<group>"; };
+		31030FC71A8DAC14001FAFD9 /* PPExtractorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPExtractorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		31030FCD1A8DAC14001FAFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31030FD61A8DAD0E001FAFD9 /* PPExtractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPExtractorTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31030FB91A8DAC14001FAFD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31030FC41A8DAC14001FAFD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31030FC81A8DAC14001FAFD9 /* libPPExtractor.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31030FB31A8DAC14001FAFD9 = {
+			isa = PBXGroup;
+			children = (
+				31030FBE1A8DAC14001FAFD9 /* PPExtractor */,
+				31030FCB1A8DAC14001FAFD9 /* PPExtractorTests */,
+				31030FBD1A8DAC14001FAFD9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		31030FBD1A8DAC14001FAFD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31030FBC1A8DAC14001FAFD9 /* libPPExtractor.a */,
+				31030FC71A8DAC14001FAFD9 /* PPExtractorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31030FBE1A8DAC14001FAFD9 /* PPExtractor */ = {
+			isa = PBXGroup;
+			children = (
+				31030FBF1A8DAC14001FAFD9 /* PPExtractor.h */,
+				31030FC11A8DAC14001FAFD9 /* PPExtractor.m */,
+			);
+			path = PPExtractor;
+			sourceTree = "<group>";
+		};
+		31030FCB1A8DAC14001FAFD9 /* PPExtractorTests */ = {
+			isa = PBXGroup;
+			children = (
+				31030FD61A8DAD0E001FAFD9 /* PPExtractorTests.m */,
+				31030FCC1A8DAC14001FAFD9 /* Supporting Files */,
+			);
+			path = PPExtractorTests;
+			sourceTree = "<group>";
+		};
+		31030FCC1A8DAC14001FAFD9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				31030FCD1A8DAC14001FAFD9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31030FBB1A8DAC14001FAFD9 /* PPExtractor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31030FD01A8DAC14001FAFD9 /* Build configuration list for PBXNativeTarget "PPExtractor" */;
+			buildPhases = (
+				31030FB81A8DAC14001FAFD9 /* Sources */,
+				31030FB91A8DAC14001FAFD9 /* Frameworks */,
+				31030FBA1A8DAC14001FAFD9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PPExtractor;
+			productName = PPExtractor;
+			productReference = 31030FBC1A8DAC14001FAFD9 /* libPPExtractor.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		31030FC61A8DAC14001FAFD9 /* PPExtractorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31030FD31A8DAC14001FAFD9 /* Build configuration list for PBXNativeTarget "PPExtractorTests" */;
+			buildPhases = (
+				31030FC31A8DAC14001FAFD9 /* Sources */,
+				31030FC41A8DAC14001FAFD9 /* Frameworks */,
+				31030FC51A8DAC14001FAFD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31030FCA1A8DAC14001FAFD9 /* PBXTargetDependency */,
+			);
+			name = PPExtractorTests;
+			productName = PPExtractorTests;
+			productReference = 31030FC71A8DAC14001FAFD9 /* PPExtractorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31030FB41A8DAC14001FAFD9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Ebates Inc.";
+				TargetAttributes = {
+					31030FBB1A8DAC14001FAFD9 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					31030FC61A8DAC14001FAFD9 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 31030FB71A8DAC14001FAFD9 /* Build configuration list for PBXProject "PPExtractor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 31030FB31A8DAC14001FAFD9;
+			productRefGroup = 31030FBD1A8DAC14001FAFD9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31030FBB1A8DAC14001FAFD9 /* PPExtractor */,
+				31030FC61A8DAC14001FAFD9 /* PPExtractorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		31030FC51A8DAC14001FAFD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31030FB81A8DAC14001FAFD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31030FC21A8DAC14001FAFD9 /* PPExtractor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31030FC31A8DAC14001FAFD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31030FD71A8DAD0E001FAFD9 /* PPExtractorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31030FCA1A8DAC14001FAFD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31030FBB1A8DAC14001FAFD9 /* PPExtractor */;
+			targetProxy = 31030FC91A8DAC14001FAFD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		31030FCE1A8DAC14001FAFD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		31030FCF1A8DAC14001FAFD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		31030FD11A8DAC14001FAFD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		31030FD21A8DAC14001FAFD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		31030FD41A8DAC14001FAFD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PPExtractorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		31030FD51A8DAC14001FAFD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PPExtractorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31030FB71A8DAC14001FAFD9 /* Build configuration list for PBXProject "PPExtractor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31030FCE1A8DAC14001FAFD9 /* Debug */,
+				31030FCF1A8DAC14001FAFD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31030FD01A8DAC14001FAFD9 /* Build configuration list for PBXNativeTarget "PPExtractor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31030FD11A8DAC14001FAFD9 /* Debug */,
+				31030FD21A8DAC14001FAFD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		31030FD31A8DAC14001FAFD9 /* Build configuration list for PBXNativeTarget "PPExtractorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31030FD41A8DAC14001FAFD9 /* Debug */,
+				31030FD51A8DAC14001FAFD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 31030FB41A8DAC14001FAFD9 /* Project object */;
+}
