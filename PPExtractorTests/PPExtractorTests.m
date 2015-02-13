@@ -75,7 +75,7 @@
       @"stringS" : @"72345 23590",
       @"stringT" : @"11 hamsters",
       @"stringU" : @"the crazy 88",
-      @"stringV" : @"the 21 slices",
+      @"stringV" : @"the 21.5 slices",
       @"stringW" : @"two",
       @"stringX" : @"0 changes",
       @"stringY" : @".009",
@@ -486,7 +486,7 @@
     XCTAssertEqualObjects([extractor dateForKey:@"stringS"], [NSDate dateWithTimeIntervalSince1970:72345]);
     XCTAssertEqualObjects([extractor dateForKey:@"stringT"], [NSDate dateWithTimeIntervalSince1970:11]);
     XCTAssertEqualObjects([extractor dateForKey:@"stringU"], [NSDate dateWithTimeIntervalSince1970:88]);
-    XCTAssertEqualObjects([extractor dateForKey:@"stringV"], [NSDate dateWithTimeIntervalSince1970:21]);
+    XCTAssertEqualObjects([extractor dateForKey:@"stringV"], [NSDate dateWithTimeIntervalSince1970:[[NSDecimalNumber decimalNumberWithString:@"21.5" locale:locale] doubleValue]]);
     XCTAssertNil([extractor dateForKey:@"stringW"]);
     XCTAssertNil([extractor dateForKey:@"stringX"]);
     XCTAssertEqualObjects([extractor dateForKey:@"stringY"], [NSDate dateWithTimeIntervalSince1970:0.009]);
@@ -677,7 +677,7 @@
     XCTAssertEqualObjects([extractor stringForKey:@"stringS"], @"72345 23590");
     XCTAssertEqualObjects([extractor stringForKey:@"stringT"], @"11 hamsters");
     XCTAssertEqualObjects([extractor stringForKey:@"stringU"], @"the crazy 88");
-    XCTAssertEqualObjects([extractor stringForKey:@"stringV"], @"the 21 slices");
+    XCTAssertEqualObjects([extractor stringForKey:@"stringV"], @"the 21.5 slices");
     XCTAssertEqualObjects([extractor stringForKey:@"stringW"], @"two");
     XCTAssertEqualObjects([extractor stringForKey:@"stringX"], @"0 changes");
     XCTAssertEqualObjects([extractor stringForKey:@"stringY"], @".009");
@@ -782,7 +782,7 @@
     XCTAssertEqualObjects([extractor decimalNumberForKey:@"stringS"], [NSDecimalNumber decimalNumberWithString:@"72345" locale:locale]);
     XCTAssertEqualObjects([extractor decimalNumberForKey:@"stringT"], [NSDecimalNumber decimalNumberWithString:@"11" locale:locale]);
     XCTAssertEqualObjects([extractor decimalNumberForKey:@"stringU" forceObject:YES], [NSDecimalNumber decimalNumberWithString:@"88" locale:locale]);
-    XCTAssertEqualObjects([extractor decimalNumberForKey:@"stringV" forceObject:YES], [NSDecimalNumber decimalNumberWithString:@"21" locale:locale]);
+    XCTAssertEqualObjects([extractor decimalNumberForKey:@"stringV" forceObject:YES], [NSDecimalNumber decimalNumberWithString:@"21.5" locale:locale]);
     XCTAssertNil([extractor decimalNumberForKey:@"stringW"]);
     XCTAssertEqualObjects([extractor decimalNumberForKey:@"stringW" forceObject:YES], [NSDecimalNumber notANumber]);
     XCTAssertEqualObjects([extractor decimalNumberForKey:@"stringX"], [NSDecimalNumber zero]);
