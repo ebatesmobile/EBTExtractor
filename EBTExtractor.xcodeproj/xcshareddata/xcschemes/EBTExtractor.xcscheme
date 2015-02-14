@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "31030FBB1A8DAC14001FAFD9"
-               BuildableName = "libPPExtractor.a"
-               BlueprintName = "PPExtractor"
-               ReferencedContainer = "container:PPExtractor.xcodeproj">
+               BuildableName = "libEBTExtractor.a"
+               BlueprintName = "EBTExtractor"
+               ReferencedContainer = "container:EBTExtractor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "31030FC61A8DAC14001FAFD9"
-               BuildableName = "PPExtractorTests.xctest"
-               BlueprintName = "PPExtractorTests"
-               ReferencedContainer = "container:PPExtractor.xcodeproj">
+               BuildableName = "EBTExtractorTests.xctest"
+               BlueprintName = "EBTExtractorTests"
+               ReferencedContainer = "container:EBTExtractor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "31030FC61A8DAC14001FAFD9"
-               BuildableName = "PPExtractorTests.xctest"
-               BlueprintName = "PPExtractorTests"
-               ReferencedContainer = "container:PPExtractor.xcodeproj">
+               BuildableName = "EBTExtractorTests.xctest"
+               BlueprintName = "EBTExtractorTests"
+               ReferencedContainer = "container:EBTExtractor.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "31030FBB1A8DAC14001FAFD9"
-            BuildableName = "libPPExtractor.a"
-            BlueprintName = "PPExtractor"
-            ReferencedContainer = "container:PPExtractor.xcodeproj">
+            BuildableName = "libEBTExtractor.a"
+            BlueprintName = "EBTExtractor"
+            ReferencedContainer = "container:EBTExtractor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "31030FBB1A8DAC14001FAFD9"
-            BuildableName = "libPPExtractor.a"
-            BlueprintName = "PPExtractor"
-            ReferencedContainer = "container:PPExtractor.xcodeproj">
+            BuildableName = "libEBTExtractor.a"
+            BlueprintName = "EBTExtractor"
+            ReferencedContainer = "container:EBTExtractor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "31030FBB1A8DAC14001FAFD9"
-            BuildableName = "libPPExtractor.a"
-            BlueprintName = "PPExtractor"
-            ReferencedContainer = "container:PPExtractor.xcodeproj">
+            BuildableName = "libEBTExtractor.a"
+            BlueprintName = "EBTExtractor"
+            ReferencedContainer = "container:EBTExtractor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

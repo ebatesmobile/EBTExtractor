@@ -1,19 +1,19 @@
 //
-//  PPExtractor.m
+//  EBTExtractor.m
 //
 //  Created by Neil Daniels
 //  Copyright (c) 2015 Ebates Inc. All rights reserved.
 //
 
-#import "PPExtractor.h"
+#import "EBTExtractor.h"
 
-@implementation PPExtractor
+@implementation EBTExtractor
 
 #pragma mark - Init
 
-+ (PPExtractor *)extractorWithDictionary:(NSDictionary *)dictionary
++ (EBTExtractor *)extractorWithDictionary:(NSDictionary *)dictionary
 {
-    return [[PPExtractor alloc] initWithDictionary:dictionary];
+    return [[EBTExtractor alloc] initWithDictionary:dictionary];
 }
 
 - (instancetype)init
@@ -55,12 +55,6 @@
 
 #pragma mark Objects
 
-- (NSDate *)dateForKey:(NSString *)key {return [self dateForKey:key forceObject:NO];}
-- (NSDate *)dateForKey:(NSString *)key forceObject:(BOOL)forceObject
-{
-    return [self _objectForKey:key expectedClass:[NSDate class] forceObject:forceObject];
-}
-
 - (NSNumber *)numberForKey:(NSString *)key {return [self numberForKey:key forceObject:NO];}
 - (NSNumber *)numberForKey:(NSString *)key forceObject:(BOOL)forceObject
 {
@@ -71,6 +65,12 @@
 - (NSString *)stringForKey:(NSString *)key forceObject:(BOOL)forceObject
 {
     return [self _objectForKey:key expectedClass:[NSString class] forceObject:forceObject];
+}
+
+- (NSDate *)unixDateForKey:(NSString *)key {return [self unixDateForKey:key forceObject:NO];}
+- (NSDate *)unixDateForKey:(NSString *)key forceObject:(BOOL)forceObject
+{
+    return [self _objectForKey:key expectedClass:[NSDate class] forceObject:forceObject];
 }
 
 - (NSDecimalNumber *)decimalNumberForKey:(NSString *)key {return [self decimalNumberForKey:key forceObject:NO];}
@@ -91,19 +91,13 @@
     return [self _objectForKey:key expectedClass:[NSDictionary class] forceObject:forceObject];
 }
 
-- (PPExtractor *)extractorForKey:(NSString *)key {return [self extractorForKey:key forceObject:NO];}
-- (PPExtractor *)extractorForKey:(NSString *)key forceObject:(BOOL)forceObject
+- (EBTExtractor *)extractorForKey:(NSString *)key {return [self extractorForKey:key forceObject:NO];}
+- (EBTExtractor *)extractorForKey:(NSString *)key forceObject:(BOOL)forceObject
 {
-    return [self _objectForKey:key expectedClass:[PPExtractor class] forceObject:forceObject];
+    return [self _objectForKey:key expectedClass:[EBTExtractor class] forceObject:forceObject];
 }
 
 #pragma mark Typed Extraction
-
-- (NSArray *)arrayOfDatesForKey:(NSString *)key {return [self arrayOfDatesForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
-- (NSArray *)arrayOfDatesForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
-{
-    return [self _arrayForKey:key contentsTranformedToClass:[NSDate class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
-}
 
 - (NSArray *)arrayOfNumbersForKey:(NSString *)key {return [self arrayOfNumbersForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
 - (NSArray *)arrayOfNumbersForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
@@ -115,6 +109,12 @@
 - (NSArray *)arrayOfStringsForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
 {
     return [self _arrayForKey:key contentsTranformedToClass:[NSString class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)arrayOfUnixDatesForKey:(NSString *)key {return [self arrayOfUnixDatesForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
+- (NSArray *)arrayOfUnixDatesForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayForKey:key contentsTranformedToClass:[NSDate class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
 }
 
 - (NSArray *)arrayOfDecimalNumbersForKey:(NSString *)key {return [self arrayOfDecimalNumbersForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
@@ -138,7 +138,7 @@
 - (NSArray *)arrayOfExtractorsForKey:(NSString *)key {return [self arrayOfExtractorsForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
 - (NSArray *)arrayOfExtractorsForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
 {
-    return [self _arrayForKey:key contentsTranformedToClass:[PPExtractor class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
+    return [self _arrayForKey:key contentsTranformedToClass:[EBTExtractor class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
 }
 
 #pragma mark Type Enforcement Helpers
@@ -178,13 +178,13 @@
         
         return dateTimestamp;
     }
-    else if (theClass == [PPExtractor class]) {
+    else if (theClass == [EBTExtractor class]) {
         NSDictionary *dictionary = [self _transformObject:fromObject toClass:[NSDictionary class] forceObject:forceObject];
         if (dictionary) {
-            return [PPExtractor extractorWithDictionary:dictionary];
+            return [EBTExtractor extractorWithDictionary:dictionary];
         }
         else if (forceObject) {
-            return [PPExtractor extractorWithDictionary:@{}];
+            return [EBTExtractor extractorWithDictionary:@{}];
         }
         return nil;
     }
