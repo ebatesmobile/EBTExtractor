@@ -23,7 +23,7 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-    if (!dictionary || ![dictionary isKindOfClass:[NSDictionary class]]) {
+    if (![dictionary isKindOfClass:[NSDictionary class]]) {
         return nil;
     }
     
@@ -40,103 +40,327 @@
 
 - (BOOL)boolForKey:(NSString *)key
 {
-    return [[self numberForKey:key forceObject:NO] boolValue];
+    return [[self numberForKey:key] boolValue];
 }
 
 - (NSInteger)integerForKey:(NSString *)key
 {
-    return [[self numberForKey:key forceObject:NO] integerValue];
+    return [[self numberForKey:key] integerValue];
 }
 
 - (NSUInteger)unsignedIntegerForKey:(NSString *)key
 {
-    return [[self numberForKey:key forceObject:NO] unsignedIntegerValue];
+    return [[self numberForKey:key] unsignedIntegerValue];
 }
 
 #pragma mark Objects
 
-- (NSNumber *)numberForKey:(NSString *)key {return [self numberForKey:key forceObject:NO];}
-- (NSNumber *)numberForKey:(NSString *)key forceObject:(BOOL)forceObject
+#pragma mark Number Extraction
+
+- (NSNumber *)numberForKey:(NSString *)key
+{
+    return [self _numberForKey:key forceObject:NO];
+}
+
+- (NSNumber *)forcedNumberForKey:(NSString *)key
+{
+    return [self _numberForKey:key forceObject:YES];
+}
+
+- (NSNumber *)_numberForKey:(NSString *)key forceObject:(BOOL)forceObject
 {
     return [self _objectForKey:key expectedClass:[NSNumber class] forceObject:forceObject];
 }
 
-- (NSString *)stringForKey:(NSString *)key {return [self stringForKey:key forceObject:NO];}
-- (NSString *)stringForKey:(NSString *)key forceObject:(BOOL)forceObject
+#pragma mark String Extraction
+
+- (NSString *)stringForKey:(NSString *)key
+{
+    return [self _stringForKey:key forceObject:NO];
+}
+
+- (NSString *)forcedStringForKey:(NSString *)key
+{
+    return [self _stringForKey:key forceObject:YES];
+}
+
+- (NSString *)_stringForKey:(NSString *)key forceObject:(BOOL)forceObject
 {
     return [self _objectForKey:key expectedClass:[NSString class] forceObject:forceObject];
 }
 
-- (NSDate *)unixDateForKey:(NSString *)key {return [self unixDateForKey:key forceObject:NO];}
-- (NSDate *)unixDateForKey:(NSString *)key forceObject:(BOOL)forceObject
+#pragma mark Unix Date Extraction
+
+- (NSDate *)unixDateForKey:(NSString *)key
+{
+    return [self _unixDateForKey:key forceObject:NO];
+}
+
+- (NSDate *)forcedUnixDateForKey:(NSString *)key
+{
+    return [self _unixDateForKey:key forceObject:YES];
+}
+
+- (NSDate *)_unixDateForKey:(NSString *)key forceObject:(BOOL)forceObject
 {
     return [self _objectForKey:key expectedClass:[NSDate class] forceObject:forceObject];
 }
 
-- (NSDecimalNumber *)decimalNumberForKey:(NSString *)key {return [self decimalNumberForKey:key forceObject:NO];}
-- (NSDecimalNumber *)decimalNumberForKey:(NSString *)key forceObject:(BOOL)forceObject
+#pragma mark Decimal Number Extraction
+
+- (NSDecimalNumber *)decimalNumberForKey:(NSString *)key
+{
+    return [self _decimalNumberForKey:key forceObject:NO];
+}
+
+- (NSDecimalNumber *)forcedDecimalNumberForKey:(NSString *)key
+{
+    return [self _decimalNumberForKey:key forceObject:YES];
+}
+
+- (NSDecimalNumber *)_decimalNumberForKey:(NSString *)key forceObject:(BOOL)forceObject
 {
     return [self _objectForKey:key expectedClass:[NSDecimalNumber class] forceObject:forceObject];
 }
 
-- (NSArray *)arrayForKey:(NSString *)key {return [self arrayForKey:key forceObject:NO];}
-- (NSArray *)arrayForKey:(NSString *)key forceObject:(BOOL)forceObject
+#pragma mark Array Extraction
+
+- (NSArray *)arrayForKey:(NSString *)key
+{
+    return [self _arrayForKey:key forceObject:NO];
+}
+
+- (NSArray *)forcedArrayForKey:(NSString *)key
+{
+    return [self _arrayForKey:key forceObject:YES];
+}
+
+- (NSArray *)_arrayForKey:(NSString *)key forceObject:(BOOL)forceObject
 {
     return [self _objectForKey:key expectedClass:[NSArray class] forceObject:forceObject];
 }
 
-- (NSDictionary *)dictionaryForKey:(NSString *)key {return [self dictionaryForKey:key forceObject:NO];}
-- (NSDictionary *)dictionaryForKey:(NSString *)key forceObject:(BOOL)forceObject
+#pragma mark Dictionary Extraction
+
+- (NSDictionary *)dictionaryForKey:(NSString *)key
+{
+    return [self _dictionaryForKey:key forceObject:NO];
+}
+
+- (NSDictionary *)forcedDictionaryForKey:(NSString *)key
+{
+    return [self _dictionaryForKey:key forceObject:YES];
+}
+
+- (NSDictionary *)_dictionaryForKey:(NSString *)key forceObject:(BOOL)forceObject
 {
     return [self _objectForKey:key expectedClass:[NSDictionary class] forceObject:forceObject];
 }
 
-- (EBTExtractor *)extractorForKey:(NSString *)key {return [self extractorForKey:key forceObject:NO];}
-- (EBTExtractor *)extractorForKey:(NSString *)key forceObject:(BOOL)forceObject
+#pragma mark Extractor Extraction
+
+- (EBTExtractor *)extractorForKey:(NSString *)key
+{
+    return [self _extractorForKey:key forceObject:NO];
+}
+
+- (EBTExtractor *)forcedExtractorForKey:(NSString *)key
+{
+    return [self _extractorForKey:key forceObject:YES];
+}
+
+- (EBTExtractor *)_extractorForKey:(NSString *)key forceObject:(BOOL)forceObject
 {
     return [self _objectForKey:key expectedClass:[EBTExtractor class] forceObject:forceObject];
 }
 
-#pragma mark Typed Extraction
+#pragma mark Typed Arrays Extraction
 
-- (NSArray *)arrayOfNumbersForKey:(NSString *)key {return [self arrayOfNumbersForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
-- (NSArray *)arrayOfNumbersForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
+#pragma mark Array of Numbers Extraction
+
+- (NSArray *)arrayOfNumbersForKey:(NSString *)key
+{
+    return [self _arrayOfNumbersForKey:key forceArrayObject:NO unconvertibleMarker:nil];
+}
+
+- (NSArray *)arrayOfNumbersForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfNumbersForKey:key forceArrayObject:NO unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)forcedArrayOfNumbersForKey:(NSString *)key
+{
+    return [self _arrayOfNumbersForKey:key forceArrayObject:YES unconvertibleMarker:nil];
+}
+
+- (NSArray *)forcedArrayOfNumbersForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfNumbersForKey:key forceArrayObject:YES unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)_arrayOfNumbersForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
 {
     return [self _arrayForKey:key contentsTranformedToClass:[NSNumber class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
 }
 
-- (NSArray *)arrayOfStringsForKey:(NSString *)key {return [self arrayOfStringsForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
-- (NSArray *)arrayOfStringsForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
+#pragma mark Array of Strings Extraction
+
+- (NSArray *)arrayOfStringsForKey:(NSString *)key
+{
+    return [self _arrayOfStringsForKey:key forceArrayObject:NO unconvertibleMarker:nil];
+}
+
+- (NSArray *)arrayOfStringsForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfStringsForKey:key forceArrayObject:NO unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)forcedArrayOfStringsForKey:(NSString *)key
+{
+    return [self _arrayOfStringsForKey:key forceArrayObject:YES unconvertibleMarker:nil];
+}
+
+- (NSArray *)forcedArrayOfStringsForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfStringsForKey:key forceArrayObject:YES unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)_arrayOfStringsForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
 {
     return [self _arrayForKey:key contentsTranformedToClass:[NSString class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
 }
 
-- (NSArray *)arrayOfUnixDatesForKey:(NSString *)key {return [self arrayOfUnixDatesForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
-- (NSArray *)arrayOfUnixDatesForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
+#pragma mark Array of Unix Dates Extraction
+
+- (NSArray *)arrayOfUnixDatesForKey:(NSString *)key
+{
+    return [self _arrayOfUnixDatesForKey:key forceArrayObject:NO unconvertibleMarker:nil];
+}
+
+- (NSArray *)arrayOfUnixDatesForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfUnixDatesForKey:key forceArrayObject:NO unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)forcedArrayOfUnixDatesForKey:(NSString *)key
+{
+    return [self _arrayOfUnixDatesForKey:key forceArrayObject:YES unconvertibleMarker:nil];
+}
+
+- (NSArray *)forcedArrayOfUnixDatesForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfUnixDatesForKey:key forceArrayObject:YES unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)_arrayOfUnixDatesForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
 {
     return [self _arrayForKey:key contentsTranformedToClass:[NSDate class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
 }
 
-- (NSArray *)arrayOfDecimalNumbersForKey:(NSString *)key {return [self arrayOfDecimalNumbersForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
-- (NSArray *)arrayOfDecimalNumbersForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
+#pragma mark Array of Decimal Numbers Extraction
+
+- (NSArray *)arrayOfDecimalNumbersForKey:(NSString *)key
+{
+    return [self _arrayOfDecimalNumbersForKey:key forceArrayObject:NO unconvertibleMarker:nil];
+}
+
+- (NSArray *)arrayOfDecimalNumbersForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfDecimalNumbersForKey:key forceArrayObject:NO unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)forcedArrayOfDecimalNumbersForKey:(NSString *)key
+{
+    return [self _arrayOfDecimalNumbersForKey:key forceArrayObject:YES unconvertibleMarker:nil];
+}
+
+- (NSArray *)forcedArrayOfDecimalNumbersForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfDecimalNumbersForKey:key forceArrayObject:YES unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)_arrayOfDecimalNumbersForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
 {
     return [self _arrayForKey:key contentsTranformedToClass:[NSDecimalNumber class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
 }
 
-- (NSArray *)arrayOfArraysForKey:(NSString *)key {return [self arrayOfArraysForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
-- (NSArray *)arrayOfArraysForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
+#pragma mark Array of Arrays Extraction
+
+- (NSArray *)arrayOfArraysForKey:(NSString *)key
+{
+    return [self _arrayOfArraysForKey:key forceArrayObject:NO unconvertibleMarker:nil];
+}
+
+- (NSArray *)arrayOfArraysForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfArraysForKey:key forceArrayObject:NO unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)forcedArrayOfArraysForKey:(NSString *)key
+{
+    return [self _arrayOfArraysForKey:key forceArrayObject:YES unconvertibleMarker:nil];
+}
+
+- (NSArray *)forcedArrayOfArraysForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfArraysForKey:key forceArrayObject:YES unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)_arrayOfArraysForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
 {
     return [self _arrayForKey:key contentsTranformedToClass:[NSArray class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
 }
 
-- (NSArray *)arrayOfDictionariesForKey:(NSString *)key {return [self arrayOfDictionariesForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
-- (NSArray *)arrayOfDictionariesForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
+#pragma mark Array of Dictionaries Extraction
+
+- (NSArray *)arrayOfDictionariesForKey:(NSString *)key
+{
+    return [self _arrayOfDictionariesForKey:key forceArrayObject:NO unconvertibleMarker:nil];
+}
+
+- (NSArray *)arrayOfDictionariesForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfDictionariesForKey:key forceArrayObject:NO unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)forcedArrayOfDictionariesForKey:(NSString *)key
+{
+    return [self _arrayOfDictionariesForKey:key forceArrayObject:YES unconvertibleMarker:nil];
+}
+
+- (NSArray *)forcedArrayOfDictionariesForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfDictionariesForKey:key forceArrayObject:YES unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)_arrayOfDictionariesForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
 {
     return [self _arrayForKey:key contentsTranformedToClass:[NSDictionary class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
 }
 
-- (NSArray *)arrayOfExtractorsForKey:(NSString *)key {return [self arrayOfExtractorsForKey:key forceArrayObject:NO unconvertibleMarker:nil];}
-- (NSArray *)arrayOfExtractorsForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
+#pragma mark Array of Extractors Extraction
+
+- (NSArray *)arrayOfExtractorsForKey:(NSString *)key
+{
+    return [self _arrayOfExtractorsForKey:key forceArrayObject:NO unconvertibleMarker:nil];
+}
+
+- (NSArray *)arrayOfExtractorsForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfExtractorsForKey:key forceArrayObject:NO unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)forcedArrayOfExtractorsForKey:(NSString *)key
+{
+    return [self _arrayOfExtractorsForKey:key forceArrayObject:YES unconvertibleMarker:nil];
+}
+
+- (NSArray *)forcedArrayOfExtractorsForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker
+{
+    return [self _arrayOfExtractorsForKey:key forceArrayObject:YES unconvertibleMarker:unconvertibleMarker];
+}
+
+- (NSArray *)_arrayOfExtractorsForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
 {
     return [self _arrayForKey:key contentsTranformedToClass:[EBTExtractor class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
 }
@@ -150,7 +374,7 @@
 
 - (NSArray *)_arrayForKey:(NSString *)key contentsTranformedToClass:(Class)class forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
 {
-    NSArray *array = [self arrayForKey:key forceObject:forceArrayObject];
+    NSArray *array = [self _arrayForKey:key forceObject:forceArrayObject];
     if (array && class) {
         array = [self.class _transformArray:array toArrayOfClass:class unconvertibleMarker:unconvertibleMarker];
     }

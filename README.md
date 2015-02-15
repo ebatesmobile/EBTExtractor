@@ -1,20 +1,19 @@
-# PPExtractor
+# EBTExtractor
 An Objective-C type coercion helper for JSON-derived dictionaries.
 
 Deserializing JSON gives no assurance about what values exist and what type they’ve been deserializing as. Sometimes the type of object a server returns isn't convenient for your purposes.
 
-PPExtractor promises that information from a server remains predictable and can used without further inspection. This promise is fulfilled by type coercion and basic value cleanup.
+EBTExtractor promises that information from a server remains predictable and can used without further inspection. This promise is fulfilled by type coercion and basic value cleanup.
 
 ## Usage
-- Create a `PPExtractor` with a `NSDictionary`.
-- Use the type-specific methods to retrieve a value of that type.
+Create an `EBTExtractor` with a `NSDictionary`. Use a type-specific method to retrieve a value of that type, for a given key.
 
 ### Example
 
 ```objc
 NSDictionary *response = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:NULL];
 
-PPExtractor *extractor = [PPExtractor extractorWithDictionary:response];
+EBTExtractor *extractor = [EBTExtractor extractorWithDictionary:response];
 
 NSInteger identifier = [extractor integerWithKey:@"id"];
 NSString *name = [extractor stringWithKey:@"name"];
@@ -105,7 +104,7 @@ extractorForKey:       | `nil`
 ## Behavior Notes
 
 ### `initWithDictionary:`
-Attempting to create a `PPExtractor` instance with `nil` or something other than an `NSDictionary` (or subclass) will return `nil`.
+Attempting to create a `EBTExtractor` instance with `nil` or something other than an `NSDictionary` (or subclass) will return `nil`.
 
 This behavior allows you to immediately give in a JSON deserializing response, without fear that `nil`, `NSArray`, or some fragment was returned.
 

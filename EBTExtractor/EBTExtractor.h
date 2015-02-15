@@ -33,32 +33,40 @@
 
 // Typed Arrays
 
-- (NSArray *)arrayOfNumbersForKey:(NSString *)key;
+- (NSArray *)arrayOfNumbersForKey:(NSString *)key; // values truncated to integer representation
 - (NSArray *)arrayOfStringsForKey:(NSString *)key;
 - (NSArray *)arrayOfUnixDatesForKey:(NSString *)key;
-- (NSArray *)arrayOfDecimalNumbersForKey:(NSString *)key;
+- (NSArray *)arrayOfDecimalNumbersForKey:(NSString *)key; // values will never be NaN
 - (NSArray *)arrayOfArraysForKey:(NSString *)key;
 - (NSArray *)arrayOfDictionariesForKey:(NSString *)key;
 - (NSArray *)arrayOfExtractorsForKey:(NSString *)key;
 
-@end
+- (NSArray *)arrayOfNumbersForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker; // values truncated to integer representation
+- (NSArray *)arrayOfStringsForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
+- (NSArray *)arrayOfUnixDatesForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
+- (NSArray *)arrayOfDecimalNumbersForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker; // values will never be NaN
+- (NSArray *)arrayOfArraysForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
+- (NSArray *)arrayOfDictionariesForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
+- (NSArray *)arrayOfExtractorsForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
 
-@interface EBTExtractor (ForcedObjects)
+// Forced Objects
 
-- (NSNumber *)numberForKey:(NSString *)key forceObject:(BOOL)forceObject; // truncated to integer representation
-- (NSString *)stringForKey:(NSString *)key forceObject:(BOOL)forceObject;
-- (NSDate *)unixDateForKey:(NSString *)key forceObject:(BOOL)forceObject;
-- (NSDecimalNumber *)decimalNumberForKey:(NSString *)key forceObject:(BOOL)forceObject; // may return NaN, but only when forceObject = YES
-- (NSArray *)arrayForKey:(NSString *)key forceObject:(BOOL)forceObject;
-- (NSDictionary *)dictionaryForKey:(NSString *)key forceObject:(BOOL)forceObject;
-- (EBTExtractor *)extractorForKey:(NSString *)key forceObject:(BOOL)forceObject;
+- (NSNumber *)forcedNumberForKey:(NSString *)key; // truncated to integer representation
+- (NSString *)forcedStringForKey:(NSString *)key;
+- (NSDate *)forcedUnixDateForKey:(NSString *)key;
+- (NSDecimalNumber *)forcedDecimalNumberForKey:(NSString *)key; // may return NaN
+- (NSArray *)forcedArrayForKey:(NSString *)key;
+- (NSDictionary *)forcedDictionaryForKey:(NSString *)key;
+- (EBTExtractor *)forcedExtractorForKey:(NSString *)key;
 
-- (NSArray *)arrayOfNumbersForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)arrayOfStringsForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)arrayOfUnixDatesForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)arrayOfDecimalNumbersForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)arrayOfArraysForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)arrayOfDictionariesForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)arrayOfExtractorsForKey:(NSString *)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker;
+// Forced Typed Arrays
+
+- (NSArray *)forcedArrayOfNumbersForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker; // values truncated to integer representation
+- (NSArray *)forcedArrayOfStringsForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
+- (NSArray *)forcedArrayOfUnixDatesForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
+- (NSArray *)forcedArrayOfDecimalNumbersForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker;  // values will never be NaN
+- (NSArray *)forcedArrayOfArraysForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
+- (NSArray *)forcedArrayOfDictionariesForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
+- (NSArray *)forcedArrayOfExtractorsForKey:(NSString *)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
 
 @end
