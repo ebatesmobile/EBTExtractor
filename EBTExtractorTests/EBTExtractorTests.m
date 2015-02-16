@@ -28,8 +28,8 @@
     
     NSDictionary *dictionary =
     @{
-      @"boolA" : @(YES),
-      @"boolB" : @(NO),
+      @"boolA" : @YES,
+      @"boolB" : @NO,
       
       @"numberA" : @(0),
       @"numberB" : @(1),
