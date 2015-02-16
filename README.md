@@ -23,9 +23,28 @@ NSDecimalNumber *rating = [extractor decimalNumberWithKey:@"rating"];
 NSArray *friendIDs = [extractor arrayOfNumbersForKey:@"friends"];
 ```
 
-## Value Methods
+## Methods
 
-### `- (BOOL)boolForKey:`
+* [Value Methods](#value-methods)
+    * [`- (BOOL)boolForKey:`](#--boolboolforkey)
+    * [`- (NSInteger)integerForKey:`](#--nsintegerintegerforkey)
+    * [`- (NSUInteger)unsignedIntegerForKey:`](#--nsuintegerunsignedintegerforkey)
+    * [`- (NSNumber *)numberForKey:`](#--nsnumber-numberforkey)
+    * [`- (NSString *)stringForKey:`](#--nsstring-stringforkey)
+    * [`- (NSDate *)unixDateForKey:`](#--nsdate-unixdateforkey)
+    * [`- (NSDecimalNumber *)decimalNumberForKey:`](#--nsdecimalnumber-decimalnumberforkey)
+    * [`- (NSArray *)arrayForKey:`](#--nsarray-arrayforkey)
+    * [`- (NSDictionary *)dictionaryForKey:`](#--nsdictionary-dictionaryforkey)
+    * [`- (EBTExtractor *)extractorForKey:`](#--ebtextractor-extractorforkey)
+* [Typed Array Value Methods](#typed-array-value-methods)
+    * [Unconvertible Markers](#unconvertible-markers)
+* [Forcing Values to Be Returned](#forcing-values-to-be-returned)
+    * [Forced Fallback Values](#forced-fallback-values)
+
+
+### Value Methods
+
+#### `- (BOOL)boolForKey:`
 Returns a `BOOL` representation of the value associated with a given key.
 
 Original Value                  | `BOOL` Representation
@@ -52,7 +71,7 @@ Any non-JSON-compatible class   | `NO`
 
 --
 
-### `- (NSInteger)integerForKey:`
+#### `- (NSInteger)integerForKey:`
 Returns an `NSInteger` representation of the value associated with a given key.
 
 **Rounding Note:** Decimal-like original values are never rounded. For example, a string with the text "7.99999" will have the `NSInteger` representation of `7`.
@@ -81,7 +100,7 @@ Any non-JSON-compatible class   | `0`
 
 --
 
-### `- (NSUInteger)unsignedIntegerForKey:`
+#### `- (NSUInteger)unsignedIntegerForKey:`
 Returns an `NSUInteger` representation of the value associated with a given key.
 
 **Rounding Note:** Decimal-like original values are never rounded. For example, a string with the text "7.99999" will have the `NSUInteger` representation of `7`.
@@ -112,7 +131,7 @@ Any non-JSON-compatible class   | `0`
 
 --
 
-### `- (NSNumber *)numberForKey:`
+#### `- (NSNumber *)numberForKey:`
 Returns an `NSNumber` representation of the value associated with a given key, or `nil`.
 
 **Note:** If the original value is inherently non-numeric, `nil` will be returned. For example, the string "apple" is considered to be non-numeric.
@@ -143,7 +162,7 @@ Any non-JSON-compatible class   | **`nil`**
 
 --
 
-### `- (NSString *)stringForKey:`
+#### `- (NSString *)stringForKey:`
 Returns an `NSString` representation of the value associated with a given key, or `nil`.
 
 **Note:** If the original value is inherently non-textual, `nil` will be returned. For example, an `NSDictionary` is considered to be non-textual.
@@ -172,7 +191,7 @@ Any non-JSON-compatible class   | **`nil`**
 
 --
 
-### `- (NSDate *)unixDateForKey:`
+#### `- (NSDate *)unixDateForKey:`
 Returns an `NSDate` representation of the value associated with a given key, or `nil`.
 
 **Important:** This method will only return valid dates for original values that are Unix timestamps.
@@ -205,7 +224,7 @@ Any non-JSON-compatible class   | **`nil`**
 
 --
 
-### `- (NSDecimalNumber *)decimalNumberForKey:`
+#### `- (NSDecimalNumber *)decimalNumberForKey:`
 Returns an `NSDecimalNumber` representation of the value associated with a given key, or `nil`.
 
 The notation in the table below may suggest that things are represented as imprecise `float` or `double` `NSNumber` representations.
@@ -237,7 +256,7 @@ Any non-JSON-compatible class   | **`nil`**
 
 --
 
-### `- (NSArray *)arrayForKey:`
+#### `- (NSArray *)arrayForKey:`
 Returns an `NSArray` representation of the value associated with a given key, or `nil`.
 
 **Warning:** This only assures that an `NSArray` is returned. It makes no assurances about types of objects in the array. See the Typed Array methods.
@@ -268,7 +287,7 @@ Any non-JSON-compatible class   | **`nil`**
 
 --
 
-### `- (NSDictionary *)dictionaryForKey:`
+#### `- (NSDictionary *)dictionaryForKey:`
 Returns an `NSDictionary` representation of the value associated with a given key, or `nil`.
 
 **Warning:** This only assures that an `NSDictionary` is returned. It makes no assurances about types of objects for the keys and values. However, if this is deserialized JSON data, then the keys should be `NSString` objects.
@@ -299,7 +318,7 @@ Any non-JSON-compatible class   | **`nil`**
 
 --
 
-### `- (EBTExtractor *)extractorForKey:`
+#### `- (EBTExtractor *)extractorForKey:`
 Returns an `EBTExtractor` representation of the value associated with a given key, or `nil`.
 
 **Note:** If the original value is not a dictionary, `nil` will be returned.
@@ -326,7 +345,7 @@ Any `NSArray`                   | **`nil`**
 Any `NSDictionary`              | `EBTExtractor` with Original Dictionary
 Any non-JSON-compatible class   | **`nil`**
 
-## Typed Array Value Methods
+### Typed Array Value Methods
 The following methods are provided are provided as a convenience to ensure the contents of an array are of a given type.
 
 Method Value                                | Array Contents
@@ -343,7 +362,7 @@ The contents of the returned arrays are subject to the same rules as the single-
 
 If an original array has contents that cannot be converted to the requested type, those items will be omitted. For example, requesting `arrayOfNumbersForKey:` for an array `@[ @"4", @"bar", @"9.24" ]` will return `@[ @4, @9 ]`.
 
-### Unconvertible Markers
+#### Unconvertible Markers
 
 The typed array methods have extended versions that can accept an "unconvertible marker". In the event that an object in the original array could not be converted, the provided marker will be used in its place. This is useful when the exact indexing positions of the original array must be maintained.
 
@@ -351,13 +370,13 @@ For example, requesting `arrayOfNumbersForKey:unconvertibleMarker:` with `@(-1)`
 
 **Note:** The marker object does not necessarily have to be of the originally requested type. Thus, you can use an `NSString` object as an unconvertible marker for an array that otherwise contains `NSNumber` objects. You should ensure that you handle this gracefully in your code.
 
-## Forcing Values to Be Returned
+### Forcing Values to Be Returned
 
 The value methods all have alternative methods that will guarantee that _some value_ will be returned. This behavior may be useful in cases where returning `nil` would be unwanted and a “default” value is acceptable.
 
 This only takes place when the normal methods would have returned `nil`.
 
-### Forced Fallback Values
+#### Forced Fallback Values
 
 Forced Value Method                                 | Forced Fallback Value
 :---------------------------------------------------|:-------------------------------
@@ -370,7 +389,7 @@ Forced Value Method                                 | Forced Fallback Value
 `- (EBTExtractor *)forcedExtractorForKey:`          | `[EBTExtractor extractorWithDictionary:@{}]`
 All Typed Array Methods                             | `@[]`
 
-### Example
+#### Example
 
 ```objc
 EBTExtractor *extractor = [EBTExtractor extractorWithDictionary:@{ @"type" : @"member" }];
