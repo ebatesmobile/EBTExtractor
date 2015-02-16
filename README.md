@@ -194,17 +194,17 @@ Any non-JSON-compatible class   | **`nil`**
 #### `- (NSDate *)unixDateForKey:`
 Returns an `NSDate` representation of the value associated with a given key, or `nil`.
 
-**Important:** This method will only return valid dates for original values that are Unix timestamps.
+**Important:** This method will only return dates for original values that can be considered numeric and non-zero.
 
-There is no built-in mechanism to handle ISO 8601 or RFC 3339 formatted date strings.
+This method only handles Unix timestamps. This does not attempt to interpret ISO 8601 or RFC 3339 formatted date strings.
 
 **Note:** If the original value is inherently non-numeric, `nil` will be returned. For example, the string "apple" is considered to be non-numeric.
 
 Original Value                  | `NSDate` Representation
 -------------------------------:|:-------------------------------
 `@YES`                          | `[NSDate dateWithTimeIntervalSince1970:1]`
-`@NO`                           | `[NSDate dateWithTimeIntervalSince1970:0]`
-`@0`                            | `[NSDate dateWithTimeIntervalSince1970:0]`
+`@NO`                           | **`nil`**
+`@0`                            | **`nil`**
 `@1`                            | `[NSDate dateWithTimeIntervalSince1970:1]`
 `@2`                            | `[NSDate dateWithTimeIntervalSince1970:2]`
 `@(-1)`                         | `[NSDate dateWithTimeIntervalSince1970:-1]`
