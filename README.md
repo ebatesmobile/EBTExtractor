@@ -363,7 +363,6 @@ The contents of the returned arrays are subject to the same rules as the single-
 If an original array has contents that cannot be converted to the requested type, those items will be omitted. For example, requesting `arrayOfNumbersForKey:` for an array `@[ @"4", @"bar", @"9.24" ]` will return `@[ @4, @9 ]`.
 
 #### Unconvertible Markers
-
 The typed array methods have extended versions that can accept an "unconvertible marker". In the event that an object in the original array could not be converted, the provided marker will be used in its place. This is useful when the exact indexing positions of the original array must be maintained.
 
 For example, requesting `arrayOfNumbersForKey:unconvertibleMarker:` with `@(-1)` for an array `@[ @"4", @"bar", @"9.24" ]` will return `@[ @4, @(-1), @9 ]`.
@@ -371,13 +370,11 @@ For example, requesting `arrayOfNumbersForKey:unconvertibleMarker:` with `@(-1)`
 **Note:** The marker object does not necessarily have to be of the originally requested type. Thus, you can use an `NSString` object as an unconvertible marker for an array that otherwise contains `NSNumber` objects. You should ensure that you handle this gracefully in your code.
 
 ### Forcing Values to Be Returned
-
 The value methods all have alternative methods that will guarantee that _some value_ will be returned. This behavior may be useful in cases where returning `nil` would be unwanted and a “default” value is acceptable.
 
 This only takes place when the normal methods would have returned `nil`.
 
 #### Forced Fallback Values
-
 Forced Value Method                                 | Forced Fallback Value
 :---------------------------------------------------|:-------------------------------
 `- (NSNumber *)forcedNumberForKey:`                 | `@0`
@@ -390,7 +387,6 @@ Forced Value Method                                 | Forced Fallback Value
 All Typed Array Methods                             | `@[]`
 
 #### Example
-
 ```objc
 EBTExtractor *extractor = [EBTExtractor extractorWithDictionary:@{ @"type" : @"member" }];
 NSMutableDictionary *someDictionary = [NSMutableDictionary dictionary];

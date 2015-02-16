@@ -34,7 +34,7 @@
     return self;
 }
 
-#pragma mark - PPExtractor
+#pragma mark - EBTExtractor
 
 #pragma mark Primitives
 
