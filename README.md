@@ -1,9 +1,9 @@
 # EBTExtractor
 An Objective-C type coercion helper for JSON-derived dictionaries.
 
-Deserializing JSON gives no assurance about what values exist and what type they’ve been deserializing as. Sometimes the type of object a server returns isn't convenient for your purposes.
+Deserializing JSON gives no assurance about what values exist and what type they’ve been deserializing as. Sometimes the type of object a server returns isn’t convenient for your purposes.
 
-EBTExtractor promises that information from a server remains predictable and can used without further inspection. This promise is fulfilled by type coercion and basic value cleanup.
+EBTExtractor promises that information from a server remains predictable and can used without further inspection. This promise is fulfilled by type coercion and basic value sanitization.
 
 ## Usage
 Create an `EBTExtractor` with a `NSDictionary`. Use a type-specific method to retrieve a value of that type, for a given key.
@@ -17,10 +17,69 @@ NSDictionary *response = [NSJSONSerialization JSONObjectWithData:jsonData option
 
 EBTExtractor *extractor = [EBTExtractor extractorWithDictionary:response];
 
-NSInteger identifier = [extractor integerWithKey:@"id"];
-NSString *name = [extractor stringWithKey:@"name"];
-NSDecimalNumber *rating = [extractor decimalNumberWithKey:@"rating"];
+NSInteger identifier = [extractor integerForKey:@"id"];
+NSString *name = [extractor stringForKey:@"name"];
+NSDecimalNumber *rating = [extractor decimalNumberForKey:@"rating"];
 NSArray *friendIDs = [extractor arrayOfNumbersForKey:@"friends"];
+```
+
+### Why Use EBTExtractor
+Using an EBTExtractor removes the burden of manually checking received value types and converting them to a desired type, if necessary.
+
+This burden normally leads to code that is tedious to write, obfuscate the original intent, and is prone to errors.
+
+The code below is a rough approximation of what the example above achieves.
+
+```objc
+NSDictionary *response = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:NULL];
+
+NSInteger identifier = 0;
+NSString *name = nil;
+NSDecimalNumber *rating = nil;
+NSArray *friendIDs = nil;
+
+if ([response isKindOfClass:[NSDictionary class]]) {
+    id serverID = [response objectForKey:@"id"];
+    id serverName = [response objectForKey:@"name"];
+    id serverRating = [response objectForKey:@"rating"];
+    id serverFriendIDs = [response objectForKey:@"friends"];
+    
+    if ([serverID respondsToSelector:@selector(integerValue)]) {
+        // NSString and NSNumber cases
+        identifier = [serverID integerValue];
+    }
+    
+    if ([serverName isKindOfClass:[NSString class]]) {
+        // Already an NSString
+        name = serverName;
+    }
+    else if ([serverName respondsToSelector:@selector(stringValue)]) {
+        // Convert NSNumber to NSString
+        name = [serverName stringValue];
+    }
+    
+    if ([serverRating isKindOfClass:[NSDecimalNumber class]]) {
+        // Already an NSDecimalNumber
+        rating = serverRating;
+    }
+    else if ([serverRating isKindOfClass:[NSNumber class]]) {
+        // Convert NSNumber to NSDecimalNumber
+        rating = [NSDecimalNumber decimalNumberWithDecimal:[serverRating decimalValue]];
+    }
+    else if ([serverRating isKindOfClass:[NSString class]]) {
+        // Convert NSString to NSDecimalNumber
+        rating = [NSDecimalNumber decimalNumberWithString:serverRating locale:[NSLocale systemLocale]];
+        if ([rating isEqualToNumber:[NSDecimalNumber notANumber]]) {
+            rating = nil;
+        }
+    }
+    
+    if ([serverFriendIDs isKindOfClass:[NSArray class]]) {
+        // Already an NSArray, but no guarantee of contents
+        friendIDs = serverFriendIDs;
+    }
+}
+
 ```
 
 ## Methods
@@ -363,7 +422,7 @@ The contents of the returned arrays are subject to the same rules as the single-
 If an original array has contents that cannot be converted to the requested type, those items will be omitted. For example, requesting `arrayOfNumbersForKey:` for an array `@[ @"4", @"bar", @"9.24" ]` will return `@[ @4, @9 ]`.
 
 #### Unconvertible Markers
-The typed array methods have extended versions that can accept an "unconvertible marker". In the event that an object in the original array could not be converted, the provided marker will be used in its place. This is useful when the exact indexing positions of the original array must be maintained.
+The typed array methods have extended versions that can accept an “unconvertible marker”. In the event that an object in the original array could not be converted, the provided marker will be used in its place. This is useful when the exact indexing positions of the original array must be maintained.
 
 For example, requesting `arrayOfNumbersForKey:unconvertibleMarker:` with `@(-1)` for an array `@[ @"4", @"bar", @"9.24" ]` will return `@[ @4, @(-1), @9 ]`.
 
