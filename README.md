@@ -28,8 +28,9 @@ Using an EBTExtractor removes the burden of manually checking received value typ
 
 This burden normally leads to code that is tedious to write, obfuscate the original intent, and is prone to errors.
 
-The code below is a rough approximation of what the example above achieves.
+The code below is an approximation of what the EBTExtractor example above achieves, but with many more lines.
 
+#### Code You Should Not Write
 ```objc
 NSDictionary *response = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:NULL];
 
@@ -79,7 +80,6 @@ if ([response isKindOfClass:[NSDictionary class]]) {
         friendIDs = serverFriendIDs;
     }
 }
-
 ```
 
 ## Methods
