@@ -382,7 +382,7 @@ Returns an `EBTExtractor` representation of the value associated with a given ke
 
 **Note:** If the original value is not a dictionary, `nil` will be returned.
 
-Original Value                  | `NSDictionary` Representation
+Original Value                  | `EBTExtractor` Representation
 -------------------------------:|:-------------------------------
 `@YES`                          | **`nil`**
 `@NO`                           | **`nil`**
