@@ -103,6 +103,10 @@
       
       @"garbageA" : NSClassFromString(NSStringFromClass([NSScanner class])),
       @"garbageB" : [NSError errorWithDomain:@"test.domain" code:888 userInfo:nil],
+      
+      @5181 : @"fizzle",
+      @5182 : @"five18two",
+      @5183 : @743,
       };
     
     self.extractor = [EBTExtractor extractorWithDictionary:dictionary];
@@ -250,6 +254,10 @@
     
     XCTAssertFalse([extractor boolForKey:@"garbageA"]);
     XCTAssertFalse([extractor boolForKey:@"garbageB"]);
+    
+    XCTAssertFalse([extractor boolForKey:@5181]);
+    XCTAssertTrue([extractor boolForKey:@5182]);
+    XCTAssertTrue([extractor boolForKey:@5183]);
 }
 
 - (void)testIntegerForKey
@@ -334,6 +342,10 @@
     
     XCTAssertEqual([extractor integerForKey:@"garbageA"], 0);
     XCTAssertEqual([extractor integerForKey:@"garbageB"], 0);
+
+    XCTAssertEqual([extractor integerForKey:@5181], 0);
+    XCTAssertEqual([extractor integerForKey:@5182], 18);
+    XCTAssertEqual([extractor integerForKey:@5183], 743);
 }
 
 - (void)testUnsignedIntegerForKey
@@ -415,8 +427,12 @@
     XCTAssertEqual([extractor unsignedIntegerForKey:@"dictionaryNumberStringA"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"dictionaryMixMixA"], 0u);
     
-    XCTAssertEqual([extractor integerForKey:@"garbageA"], 0u);
-    XCTAssertEqual([extractor integerForKey:@"garbageB"], 0u);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@"garbageA"], 0u);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@"garbageB"], 0u);
+    
+    XCTAssertEqual([extractor unsignedIntegerForKey:@5181], 0);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@5182], 18);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@5183], 743);
 }
 
 #pragma mark - Objects
@@ -511,6 +527,11 @@
     XCTAssertNil([extractor numberForKey:@"garbageA"]);
     XCTAssertNil([extractor numberForKey:@"garbageB"]);
     XCTAssertEqualObjects([extractor forcedNumberForKey:@"garbageB"], @0);
+    
+    XCTAssertNil([extractor numberForKey:@5181]);
+    XCTAssertEqualObjects([extractor forcedNumberForKey:@5181], @0);
+    XCTAssertEqualObjects([extractor numberForKey:@5182], @18);
+    XCTAssertEqualObjects([extractor numberForKey:@5183], @743);
 }
 
 - (void)testStringForKey
@@ -602,9 +623,13 @@
     XCTAssertNil([extractor stringForKey:@"garbageA"]);
     XCTAssertNil([extractor stringForKey:@"garbageB"]);
     XCTAssertEqualObjects([extractor forcedStringForKey:@"garbageB"], @"");
+    
+    XCTAssertEqualObjects([extractor stringForKey:@5181], @"fizzle");
+    XCTAssertEqualObjects([extractor stringForKey:@5182], @"five18two");
+    XCTAssertEqualObjects([extractor stringForKey:@5183], @"743");
 }
 
-- (void)testDateForKey
+- (void)testUnixDateForKey
 {
     XCTAssertNil([self.emptyExtractor unixDateForKey:@"none"]);
     XCTAssertEqualObjects([self.emptyExtractor forcedUnixDateForKey:@"none"], [NSDate dateWithTimeIntervalSince1970:0]);
@@ -700,6 +725,11 @@
     XCTAssertNil([extractor unixDateForKey:@"garbageA"]);
     XCTAssertNil([extractor unixDateForKey:@"garbageB"]);
     XCTAssertEqualObjects([extractor forcedUnixDateForKey:@"garbageB"], [NSDate dateWithTimeIntervalSince1970:0]);
+    
+    XCTAssertNil([extractor unixDateForKey:@5181]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForKey:@5181], [NSDate dateWithTimeIntervalSince1970:0]);
+    XCTAssertEqualObjects([extractor unixDateForKey:@5182], [NSDate dateWithTimeIntervalSince1970:18]);
+    XCTAssertEqualObjects([extractor unixDateForKey:@5183], [NSDate dateWithTimeIntervalSince1970:743]);
 }
 
 - (void)testDecimalNumberForKey
@@ -803,6 +833,11 @@
     XCTAssertNil([extractor decimalNumberForKey:@"garbageA"]);
     XCTAssertNil([extractor decimalNumberForKey:@"garbageB"]);
     XCTAssertEqualObjects([extractor forcedDecimalNumberForKey:@"garbageB"], [NSDecimalNumber notANumber]);
+    
+    XCTAssertNil([extractor decimalNumberForKey:@5181]);
+    XCTAssertEqualObjects([extractor forcedDecimalNumberForKey:@5181], [NSDecimalNumber notANumber]);
+    XCTAssertEqualObjects([extractor decimalNumberForKey:@5182], [NSDecimalNumber decimalNumberWithString:@"18" locale:locale]);
+    XCTAssertEqualObjects([extractor decimalNumberForKey:@5183], [NSDecimalNumber decimalNumberWithString:@"743" locale:locale]);
 }
 
 - (void)testArrayForKey
@@ -899,6 +934,11 @@
     XCTAssertNil([extractor arrayForKey:@"garbageA"]);
     XCTAssertNil([extractor arrayForKey:@"garbageB"]);
     XCTAssertTrue([[extractor forcedArrayForKey:@"garbageB"] isEqualToArray:@[]]);
+    
+    XCTAssertNil([extractor arrayForKey:@5181]);
+    XCTAssertTrue([[extractor forcedArrayForKey:@5181] isEqualToArray:@[]]);
+    XCTAssertNil([extractor arrayForKey:@5182]);
+    XCTAssertNil([extractor arrayForKey:@5183]);
 }
 
 - (void)testDictionaryForKey
@@ -994,6 +1034,11 @@
     XCTAssertNil([extractor dictionaryForKey:@"garbageA"]);
     XCTAssertNil([extractor dictionaryForKey:@"garbageB"]);
     XCTAssertTrue([[extractor forcedDictionaryForKey:@"garbageB"] isEqualToDictionary:@{}]);
+    
+    XCTAssertNil([extractor dictionaryForKey:@5181]);
+    XCTAssertTrue([[extractor forcedDictionaryForKey:@5181] isEqualToDictionary:@{}]);
+    XCTAssertNil([extractor dictionaryForKey:@5182]);
+    XCTAssertNil([extractor dictionaryForKey:@5183]);
 }
 
 - (void)testExtractorForKey
@@ -1100,6 +1145,11 @@
     XCTAssertNil([extractor extractorForKey:@"garbageA"]);
     XCTAssertNil([extractor extractorForKey:@"garbageB"]);
     XCTAssertTrue([[extractor forcedExtractorForKey:@"garbageB"].dictionary isEqualToDictionary:@{}]);
+    
+    XCTAssertNil([extractor extractorForKey:@5181]);
+    XCTAssertTrue([[extractor forcedExtractorForKey:@5181].dictionary isEqualToDictionary:@{}]);
+    XCTAssertNil([extractor extractorForKey:@5182]);
+    XCTAssertNil([extractor extractorForKey:@5183]);
 }
 
 #pragma mark - Typed Arrays
@@ -1232,6 +1282,11 @@
     XCTAssertNil([extractor arrayOfNumbersForKey:@"garbageB" unconvertibleMarker:[NSNull null]]);
     XCTAssertTrue([[extractor forcedArrayOfNumbersForKey:@"garbageB" unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
     XCTAssertTrue([[extractor forcedArrayOfNumbersForKey:@"garbageB" unconvertibleMarker:nil] isEqualToArray:@[]]);
+    
+    XCTAssertNil([extractor arrayOfNumbersForKey:@5181]);
+    XCTAssertTrue([[extractor forcedArrayOfNumbersForKey:@5181 unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
+    XCTAssertNil([extractor arrayOfNumbersForKey:@5182]);
+    XCTAssertNil([extractor arrayOfNumbersForKey:@5183]);
 }
 
 - (void)testArrayOfStringsForKey
@@ -1364,6 +1419,11 @@
     XCTAssertNil([extractor arrayOfStringsForKey:@"garbageB" unconvertibleMarker:[NSNull null]]);
     XCTAssertTrue([[extractor forcedArrayOfStringsForKey:@"garbageB" unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
     XCTAssertTrue([[extractor forcedArrayOfStringsForKey:@"garbageB" unconvertibleMarker:nil] isEqualToArray:@[]]);
+    
+    XCTAssertNil([extractor arrayOfStringsForKey:@5181]);
+    XCTAssertTrue([[extractor forcedArrayOfStringsForKey:@5181 unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
+    XCTAssertNil([extractor arrayOfStringsForKey:@5182]);
+    XCTAssertNil([extractor arrayOfStringsForKey:@5183]);
 }
 
 - (void)testArrayOfDatesForKey
@@ -1495,6 +1555,11 @@
     XCTAssertNil([extractor arrayOfUnixDatesForKey:@"garbageB" unconvertibleMarker:[NSNull null]]);
     XCTAssertTrue([[extractor forcedArrayOfUnixDatesForKey:@"garbageB" unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
     XCTAssertTrue([[extractor forcedArrayOfUnixDatesForKey:@"garbageB" unconvertibleMarker:nil] isEqualToArray:@[]]);
+    
+    XCTAssertNil([extractor arrayOfUnixDatesForKey:@5181]);
+    XCTAssertTrue([[extractor forcedArrayOfUnixDatesForKey:@5181 unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
+    XCTAssertNil([extractor arrayOfUnixDatesForKey:@5182]);
+    XCTAssertNil([extractor arrayOfUnixDatesForKey:@5183]);
 }
 
 - (void)testArrayOfDecimalNumbersForKey
@@ -1628,6 +1693,11 @@
     XCTAssertNil([extractor arrayOfDecimalNumbersForKey:@"garbageB" unconvertibleMarker:[NSNull null]]);
     XCTAssertTrue([[extractor forcedArrayOfDecimalNumbersForKey:@"garbageB" unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
     XCTAssertTrue([[extractor forcedArrayOfDecimalNumbersForKey:@"garbageB" unconvertibleMarker:nil] isEqualToArray:@[]]);
+    
+    XCTAssertNil([extractor arrayOfDecimalNumbersForKey:@5181]);
+    XCTAssertTrue([[extractor forcedArrayOfDecimalNumbersForKey:@5181 unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
+    XCTAssertNil([extractor arrayOfDecimalNumbersForKey:@5182]);
+    XCTAssertNil([extractor arrayOfDecimalNumbersForKey:@5183]);
 }
 
 - (void)testArrayOfArraysForKey
@@ -1734,6 +1804,11 @@
         XCTAssertNil([extractor arrayOfArraysForKey:@"garbageA"]);
         XCTAssertNil([extractor arrayOfArraysForKey:@"garbageB"]);
         XCTAssertTrue([[extractor forcedArrayOfArraysForKey:@"garbageB" unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
+        
+        XCTAssertNil([extractor arrayOfArraysForKey:@5181]);
+        XCTAssertTrue([[extractor forcedArrayOfArraysForKey:@5181 unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
+        XCTAssertNil([extractor arrayOfArraysForKey:@5182]);
+        XCTAssertNil([extractor arrayOfArraysForKey:@5183]);
     }
     
     {
@@ -1869,6 +1944,11 @@
         XCTAssertNil([extractor arrayOfDictionariesForKey:@"garbageA"]);
         XCTAssertNil([extractor arrayOfDictionariesForKey:@"garbageB"]);
         XCTAssertTrue([[extractor forcedArrayOfDictionariesForKey:@"garbageB" unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
+        
+        XCTAssertNil([extractor arrayOfDictionariesForKey:@5181]);
+        XCTAssertTrue([[extractor forcedArrayOfDictionariesForKey:@5181 unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
+        XCTAssertNil([extractor arrayOfDictionariesForKey:@5182]);
+        XCTAssertNil([extractor arrayOfDictionariesForKey:@5183]);
     }
     
     {
@@ -2004,6 +2084,11 @@
         XCTAssertNil([extractor arrayOfExtractorsForKey:@"garbageA"]);
         XCTAssertNil([extractor arrayOfExtractorsForKey:@"garbageB"]);
         XCTAssertTrue([[extractor forcedArrayOfExtractorsForKey:@"garbageB" unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
+        
+        XCTAssertNil([extractor arrayOfExtractorsForKey:@5181]);
+        XCTAssertTrue([[extractor forcedArrayOfExtractorsForKey:@5181 unconvertibleMarker:[NSNull null]] isEqualToArray:@[]]);
+        XCTAssertNil([extractor arrayOfExtractorsForKey:@5182]);
+        XCTAssertNil([extractor arrayOfExtractorsForKey:@5183]);
     }
     
     {
