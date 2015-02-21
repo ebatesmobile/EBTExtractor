@@ -41,13 +41,13 @@
 - (NSArray *)arrayOfDictionariesForKey:(id)key;
 - (NSArray *)arrayOfExtractorsForKey:(id)key;
 
-- (NSArray *)arrayOfNumbersForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker; // values truncated to integer representation
-- (NSArray *)arrayOfStringsForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)arrayOfUnixDatesForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)arrayOfDecimalNumbersForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker; // values will never be NaN
-- (NSArray *)arrayOfArraysForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)arrayOfDictionariesForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)arrayOfExtractorsForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
+- (NSArray *)arrayOfNumbersForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker; // values truncated to integer representation
+- (NSArray *)arrayOfStringsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
+- (NSArray *)arrayOfUnixDatesForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
+- (NSArray *)arrayOfDecimalNumbersForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker; // values will never be NaN
+- (NSArray *)arrayOfArraysForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
+- (NSArray *)arrayOfDictionariesForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
+- (NSArray *)arrayOfExtractorsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
 
 // Forced Objects
 
@@ -61,12 +61,12 @@
 
 // Forced Typed Arrays
 
-- (NSArray *)forcedArrayOfNumbersForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker; // values truncated to integer representation
-- (NSArray *)forcedArrayOfStringsForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)forcedArrayOfUnixDatesForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)forcedArrayOfDecimalNumbersForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker;  // values will never be NaN
-- (NSArray *)forcedArrayOfArraysForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)forcedArrayOfDictionariesForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
-- (NSArray *)forcedArrayOfExtractorsForKey:(id)key unconvertibleMarker:(NSObject *)unconvertibleMarker;
+- (NSArray *)forcedArrayOfNumbersForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker; // values truncated to integer representation
+- (NSArray *)forcedArrayOfStringsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
+- (NSArray *)forcedArrayOfUnixDatesForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
+- (NSArray *)forcedArrayOfDecimalNumbersForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;  // values will never be NaN
+- (NSArray *)forcedArrayOfArraysForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
+- (NSArray *)forcedArrayOfDictionariesForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
+- (NSArray *)forcedArrayOfExtractorsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
 
 @end
