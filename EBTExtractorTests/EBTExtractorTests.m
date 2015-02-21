@@ -1426,7 +1426,7 @@
     XCTAssertNil([extractor arrayOfStringsForKey:@5183]);
 }
 
-- (void)testArrayOfDatesForKey
+- (void)testArrayOfUnixDatesForKey
 {
     XCTAssertNil([self.emptyExtractor arrayOfUnixDatesForKey:@"none"]);
     XCTAssertNil([self.emptyExtractor arrayOfUnixDatesForKey:@"none" unconvertibleMarker:nil]);

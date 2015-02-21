@@ -11,6 +11,7 @@
 		31030FC21A8DAC14001FAFD9 /* EBTExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FC11A8DAC14001FAFD9 /* EBTExtractor.m */; };
 		31030FC81A8DAC14001FAFD9 /* libEBTExtractor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31030FBC1A8DAC14001FAFD9 /* libEBTExtractor.a */; };
 		31030FD71A8DAD0E001FAFD9 /* EBTExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */; };
+		31ADCE161A9870B200C16063 /* EBTExtractorSubclassingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		31030FC71A8DAC14001FAFD9 /* EBTExtractorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EBTExtractorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31030FCD1A8DAC14001FAFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBTExtractorTests.m; sourceTree = "<group>"; };
+		31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBTExtractorSubclassingTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */,
+				31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */,
 				31030FCC1A8DAC14001FAFD9 /* Supporting Files */,
 			);
 			path = EBTExtractorTests;
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31030FD71A8DAD0E001FAFD9 /* EBTExtractorTests.m in Sources */,
+				31ADCE161A9870B200C16063 /* EBTExtractorSubclassingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

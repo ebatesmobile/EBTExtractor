@@ -9,7 +9,7 @@
 
 @interface EBTExtractor : NSObject
 
-+ (EBTExtractor *)extractorWithDictionary:(NSDictionary *)dictionary;
++ (instancetype)extractorWithDictionary:(NSDictionary *)dictionary;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary NS_DESIGNATED_INITIALIZER;
 
@@ -29,7 +29,7 @@
 - (NSDecimalNumber *)decimalNumberForKey:(id)key; // never returns NaN
 - (NSArray *)arrayForKey:(id)key;
 - (NSDictionary *)dictionaryForKey:(id)key;
-- (EBTExtractor *)extractorForKey:(id)key;
+- (instancetype)extractorForKey:(id)key;
 
 // Typed Arrays
 
@@ -57,7 +57,7 @@
 - (NSDecimalNumber *)forcedDecimalNumberForKey:(id)key; // may return NaN
 - (NSArray *)forcedArrayForKey:(id)key;
 - (NSDictionary *)forcedDictionaryForKey:(id)key;
-- (EBTExtractor *)forcedExtractorForKey:(id)key;
+- (instancetype)forcedExtractorForKey:(id)key;
 
 // Forced Typed Arrays
 

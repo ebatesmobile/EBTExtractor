@@ -380,6 +380,8 @@ Any non-JSON-compatible class   | **`nil`**
 #### `- (EBTExtractor *)extractorForKey:`
 Returns an `EBTExtractor` representation of the value associated with a given key, or `nil`.
 
+**Subclassing Note:** If you subclass `EBTExtractor`, then instances returned from this method will be of that class, not `EBTExtractor`.
+
 **Note:** If the original value is not a dictionary, `nil` will be returned.
 
 Original Value                  | `EBTExtractor` Representation

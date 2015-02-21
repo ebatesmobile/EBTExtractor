@@ -11,9 +11,9 @@
 
 #pragma mark - Init
 
-+ (EBTExtractor *)extractorWithDictionary:(NSDictionary *)dictionary
++ (instancetype)extractorWithDictionary:(NSDictionary *)dictionary
 {
-    return [[EBTExtractor alloc] initWithDictionary:dictionary];
+    return [[self alloc] initWithDictionary:dictionary];
 }
 
 - (instancetype)init
@@ -159,19 +159,19 @@
 
 #pragma mark Extractor Extraction
 
-- (EBTExtractor *)extractorForKey:(id)key
+- (instancetype)extractorForKey:(id)key
 {
     return [self _extractorForKey:key forceObject:NO];
 }
 
-- (EBTExtractor *)forcedExtractorForKey:(id)key
+- (instancetype)forcedExtractorForKey:(id)key
 {
     return [self _extractorForKey:key forceObject:YES];
 }
 
-- (EBTExtractor *)_extractorForKey:(id)key forceObject:(BOOL)forceObject
+- (instancetype)_extractorForKey:(id)key forceObject:(BOOL)forceObject
 {
-    return [self _objectForKey:key expectedClass:[EBTExtractor class] forceObject:forceObject];
+    return [self _objectForKey:key expectedClass:[self class] forceObject:forceObject];
 }
 
 #pragma mark Typed Arrays Extraction
@@ -362,7 +362,7 @@
 
 - (NSArray *)_arrayOfExtractorsForKey:(id)key forceArrayObject:(BOOL)forceArrayObject unconvertibleMarker:(NSObject *)unconvertibleMarker
 {
-    return [self _arrayForKey:key contentsTranformedToClass:[EBTExtractor class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
+    return [self _arrayForKey:key contentsTranformedToClass:[self class] forceArrayObject:forceArrayObject unconvertibleMarker:unconvertibleMarker];
 }
 
 #pragma mark Type Enforcement Helpers
@@ -402,13 +402,13 @@
         
         return dateTimestamp;
     }
-    else if (theClass == [EBTExtractor class]) {
+    else if (theClass == [self class]) {
         NSDictionary *dictionary = [self _transformObject:fromObject toClass:[NSDictionary class] forceObject:forceObject];
         if (dictionary) {
-            return [EBTExtractor extractorWithDictionary:dictionary];
+            return [self extractorWithDictionary:dictionary];
         }
         else if (forceObject) {
-            return [EBTExtractor extractorWithDictionary:@{}];
+            return [self extractorWithDictionary:@{}];
         }
         return nil;
     }
