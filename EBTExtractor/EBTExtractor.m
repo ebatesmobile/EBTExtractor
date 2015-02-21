@@ -50,6 +50,9 @@
 
 - (NSUInteger)unsignedIntegerForKey:(id)key
 {
+    if ([[self numberForKey:key] integerValue] <= 0) {
+        return 0;
+    }
     return [[self numberForKey:key] unsignedIntegerValue];
 }
 

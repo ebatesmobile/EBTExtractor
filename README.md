@@ -106,6 +106,8 @@ if ([response isKindOfClass:[NSDictionary class]]) {
 #### `- (BOOL)boolForKey:`
 Returns a `BOOL` representation of the value associated with a given key.
 
+Generally, `YES` will be returned for any non-zero numeric value.
+
 Original Value                  | `BOOL` Representation
 -------------------------------:|:-------------------------------
 `@YES`                          | `YES`
@@ -162,6 +164,8 @@ Any non-JSON-compatible class   | `0`
 #### `- (NSUInteger)unsignedIntegerForKey:`
 Returns an `NSUInteger` representation of the value associated with a given key.
 
+**Important:** Original values that are non-numeric or negative will return `0`. For example, a number with the value -45 will have the `NSUInteger` representation of `0`. This differs from standard behavior where a negative integer would be treated as a high value unsigned integer.
+
 **Rounding Note:** Decimal-like original values are never rounded. For example, a string with the text "7.99999" will have the `NSUInteger` representation of `7`.
 
 **Warning:** This may return unintended values when encountering original values that are negative.
@@ -173,7 +177,7 @@ Original Value                  | `NSUInteger ` Representation
 `@0`                            | `0`
 `@1`                            | `1`
 `@2`                            | `2`
-`@(-1)`                         | dependent on device architecture
+`@(-1)`                         | `0`
 `@8`                            | `8`
 `@1415162234`                   | `1415162234`
 `@5.94` as `NSDecimalNumber`    | `5`

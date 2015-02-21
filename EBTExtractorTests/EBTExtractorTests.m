@@ -360,18 +360,18 @@
     XCTAssertEqual([extractor unsignedIntegerForKey:@"numberA"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"numberB"], 1u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"numberC"], 2u);
-    XCTAssertEqual([extractor unsignedIntegerForKey:@"numberD"], NSUIntegerMax - (1u) + 1u);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@"numberD"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"numberE"], 8u);
-    XCTAssertEqual([extractor unsignedIntegerForKey:@"numberF"], NSUIntegerMax - (5u) + 1u);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@"numberF"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"numberG"], 5u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"numberH"], 7u);
-    XCTAssertEqual([extractor unsignedIntegerForKey:@"numberI"], NSUIntegerMax - (835u) + 1u);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@"numberI"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"numberJ"], 685885182u);
     
     XCTAssertEqual([extractor unsignedIntegerForKey:@"decimalA"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"decimalB"], 4u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"decimalC"], 6u);
-    XCTAssertEqual([extractor unsignedIntegerForKey:@"decimalD"], NSUIntegerMax - (3u) + 1u);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@"decimalD"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"decimalE"], 18u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"decimalF"], 42u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"decimalG"], 13u);
@@ -385,7 +385,7 @@
     XCTAssertEqual([extractor unsignedIntegerForKey:@"stringC"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"stringD"], 5u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"stringE"], 8u);
-    XCTAssertEqual([extractor unsignedIntegerForKey:@"stringF"], NSUIntegerMax - (5u) + 1u);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@"stringF"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"stringG"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"stringH"], 35u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"stringI"], 99u);
@@ -405,9 +405,9 @@
     XCTAssertEqual([extractor unsignedIntegerForKey:@"stringW"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"stringX"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"stringY"], 0u);
-    XCTAssertEqual([extractor unsignedIntegerForKey:@"stringZ"], NSUIntegerMax - (2u) + 1u);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@"stringZ"], 0u);
     
-    XCTAssertEqual([extractor unsignedIntegerForKey:@"dateA"], NSUIntegerMax - (5482343u) + 1u);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@"dateA"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"dateB"], 1415162234u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"dateC"], 1451606400u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"dateD"], 2012u);

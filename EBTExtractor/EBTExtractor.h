@@ -19,7 +19,7 @@
 
 - (BOOL)boolForKey:(id)key;
 - (NSInteger)integerForKey:(id)key;
-- (NSUInteger)unsignedIntegerForKey:(id)key;
+- (NSUInteger)unsignedIntegerForKey:(id)key; // negative values will return 0
 
 // Objects
 
