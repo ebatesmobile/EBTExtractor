@@ -5,6 +5,8 @@ Deserializing JSON gives no assurance about what values exist and what type they
 
 EBTExtractor promises that information from a server remains predictable and can used without further inspection. This promise is fulfilled by type coercion and basic value sanitization.
 
+The [Ebates iOS App](http://www.ebates.com/mobile.htm) uses this helper to streamline data interpretation from a variety of APIs and services.
+
 ## Usage
 Create an `EBTExtractor` with a `NSDictionary`. Use a type-specific method to retrieve a value of that type, for a given key.
 
@@ -460,3 +462,6 @@ NSMutableDictionary *someDictionary = [NSMutableDictionary dictionary];
 [someDictionary setObject:[extractor forcedNumberForKey:@"userID"] forKey:"identifier"]; // @0
 [someDictionary setObject:[extractor forcedStringForKey:@"type"] forKey:"accountType"]; // @"member" (normal behavior)
 ```
+
+## License
+EBTExtractor is available under the MIT license. See the LICENSE file for more information.
