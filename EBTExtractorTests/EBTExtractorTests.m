@@ -446,9 +446,9 @@
     XCTAssertEqual([extractor unsignedIntegerForKey:@"garbageA"], 0u);
     XCTAssertEqual([extractor unsignedIntegerForKey:@"garbageB"], 0u);
     
-    XCTAssertEqual([extractor unsignedIntegerForKey:@5181], 0);
-    XCTAssertEqual([extractor unsignedIntegerForKey:@5182], 18);
-    XCTAssertEqual([extractor unsignedIntegerForKey:@5183], 743);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@5181], 0u);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@5182], 18u);
+    XCTAssertEqual([extractor unsignedIntegerForKey:@5183], 743u);
 }
 
 #pragma mark - Objects
@@ -2124,7 +2124,7 @@
         {
             NSArray *arrayOfExtractors_dictionariesA = [extractor arrayOfExtractorsForKey:@"arrayOfDictionariesA"];
             
-            XCTAssertEqual(arrayOfExtractors_dictionariesA.count, 2);
+            XCTAssertEqual(arrayOfExtractors_dictionariesA.count, 2u);
             
             EBTExtractor *firstExtractor = arrayOfExtractors_dictionariesA[0];
             XCTAssertTrue([firstExtractor.dictionary isEqualToDictionary:oneTwoThreeFourDictionary]);
@@ -2138,7 +2138,7 @@
         {
             NSArray *arrayOfExtractors_dictionariesA = [extractor arrayOfExtractorsForKey:@"arrayOfDictionariesA" unconvertibleMarker:nil];
             
-            XCTAssertEqual(arrayOfExtractors_dictionariesA.count, 2);
+            XCTAssertEqual(arrayOfExtractors_dictionariesA.count, 2u);
             
             EBTExtractor *firstExtractor = arrayOfExtractors_dictionariesA[0];
             XCTAssertTrue([firstExtractor.dictionary isEqualToDictionary:oneTwoThreeFourDictionary]);
@@ -2152,7 +2152,7 @@
         {
             NSArray *arrayOfExtractors_dictionariesA = [extractor forcedArrayOfExtractorsForKey:@"arrayOfDictionariesA" unconvertibleMarker:nil];
             
-            XCTAssertEqual(arrayOfExtractors_dictionariesA.count, 2);
+            XCTAssertEqual(arrayOfExtractors_dictionariesA.count, 2u);
             
             EBTExtractor *firstExtractor = arrayOfExtractors_dictionariesA[0];
             XCTAssertTrue([firstExtractor.dictionary isEqualToDictionary:oneTwoThreeFourDictionary]);
@@ -2166,7 +2166,7 @@
         {
             NSArray *arrayOfExtractors_mixedA = [extractor arrayOfExtractorsForKey:@"arrayOfMixedA"];
             
-            XCTAssertEqual(arrayOfExtractors_mixedA.count, 1);
+            XCTAssertEqual(arrayOfExtractors_mixedA.count, 1u);
             
             EBTExtractor *firstExtractor = arrayOfExtractors_mixedA[0];
             XCTAssertTrue([firstExtractor.dictionary isEqualToDictionary:wxyzDictionary]);
@@ -2176,7 +2176,7 @@
         {
             NSArray *arrayOfExtractors_mixedA = [extractor forcedArrayOfExtractorsForKey:@"arrayOfMixedA" unconvertibleMarker:[NSNull null]];
             
-            XCTAssertEqual(arrayOfExtractors_mixedA.count, 4);
+            XCTAssertEqual(arrayOfExtractors_mixedA.count, 4u);
             
             XCTAssertEqualObjects(arrayOfExtractors_mixedA[0], [NSNull null]);
             

@@ -85,13 +85,13 @@
     XCTAssertNil([self.timeZoneExtractor timeZoneForKey:@"cat"]);
     
     NSArray *arrayOfExtractors = [self.timeZoneExtractor arrayOfExtractorsForKey:@"states"];
-    XCTAssertEqual(arrayOfExtractors.count, 3);
+    XCTAssertEqual(arrayOfExtractors.count, 3u);
     XCTAssertEqualObjects([arrayOfExtractors[0] timeZoneForKey:@"partA"], [NSTimeZone timeZoneWithName:@"America/North_Dakota/New_Salem"]);
     XCTAssertEqualObjects([arrayOfExtractors[1] timeZoneForKey:@"partB"], [NSTimeZone timeZoneWithName:@"America/Kentucky/Louisville"]);
     XCTAssertEqualObjects([arrayOfExtractors[2] timeZoneForKey:@"partD"], [NSTimeZone timeZoneWithName:@"America/Indiana/Indianapolis"]);
     
     NSArray *arrayOfExtractorsWithFallback = [self.timeZoneExtractor arrayOfExtractorsForKey:@"states" unconvertibleMarker:[EBTExtractor extractorWithDictionary:@{}]];
-    XCTAssertEqual(arrayOfExtractorsWithFallback.count, 4);
+    XCTAssertEqual(arrayOfExtractorsWithFallback.count, 4u);
     XCTAssertEqualObjects([arrayOfExtractorsWithFallback[0] timeZoneForKey:@"partA"], [NSTimeZone timeZoneWithName:@"America/North_Dakota/New_Salem"]);
     XCTAssertEqualObjects([arrayOfExtractorsWithFallback[1] timeZoneForKey:@"partB"], [NSTimeZone timeZoneWithName:@"America/Kentucky/Louisville"]);
     XCTAssertTrue([arrayOfExtractorsWithFallback[2] isMemberOfClass:[EBTExtractor class]]);
