@@ -1,4 +1,6 @@
 # EBTExtractor
+[![Build Status](https://travis-ci.org/ebatesmobile/EBTExtractor.svg?branch=master)](https://travis-ci.org/ebatesmobile/EBTExtractor)
+
 An Objective-C type coercion helper for JSON-derived dictionaries.
 
 Deserializing JSON gives no assurance about what values exist and what type they’ve been deserializing as. Sometimes the type of object a server returns isn’t convenient for your purposes.
