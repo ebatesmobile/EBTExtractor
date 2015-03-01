@@ -186,6 +186,48 @@
     }
 }
 
+- (void)testExtractorDeallocation
+{
+    EBTExtractor *strongExtractor = [[EBTExtractor alloc] initWithDictionary:@{ @"foo" : @"bar" }];
+    XCTAssertNotNil(strongExtractor);
+    
+    EBTExtractor * __weak weakExtractor = strongExtractor;
+    XCTAssertNotNil(weakExtractor);
+    
+    XCTAssertEqualObjects([strongExtractor stringForKey:@"foo"], @"bar");
+    XCTAssertEqualObjects([weakExtractor stringForKey:@"foo"], @"bar");
+    
+    strongExtractor = nil;
+    XCTAssertNil(weakExtractor);
+}
+
+- (void)testThreadShuntingAndBackgroundCreation
+{
+    XCTestExpectation *extractorShuntExpectation = [self expectationWithDescription:@"use extractor on different thread"];
+    XCTestExpectation *extractorBackgroundExpectation = [self expectationWithDescription:@"create extractor off main thread"];
+    
+    EBTExtractor *shuntableExtractor = [EBTExtractor extractorWithDictionary:@{ @"foo" : @"5", @"tag" : @"map$24.53take", @"bar" : @2 }];
+    XCTAssertEqualObjects([shuntableExtractor numberForKey:@"foo"], @5);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        XCTAssertFalse([NSThread currentThread].isMainThread);
+        
+        XCTAssertEqualObjects([shuntableExtractor decimalNumberForKey:@"tag"], [NSDecimalNumber decimalNumberWithString:@"24.53" locale:[NSLocale systemLocale]]);
+        
+        EBTExtractor *notMainThreadExtractor = [EBTExtractor extractorWithDictionary:@{ @"egg" : @"y01k" , @"take" : @"8" }];
+        XCTAssertEqualObjects([notMainThreadExtractor numberForKey:@"egg"], @1);
+
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            XCTAssertEqualObjects([shuntableExtractor stringForKey:@"bar"], @"2");
+            XCTAssertEqualObjects([notMainThreadExtractor numberForKey:@"take"], @8);
+            [extractorShuntExpectation fulfill];
+            [extractorBackgroundExpectation fulfill];
+        });
+    });
+    
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+}
+
 #pragma mark - Primitives
 
 - (void)testBoolForKey

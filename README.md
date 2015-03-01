@@ -86,6 +86,37 @@ if ([response isKindOfClass:[NSDictionary class]]) {
 }
 ```
 
+## Supported OS Versions
+* Fully Supported and Tested On:
+    * iOS 7
+    * iOS 8
+
+Although not tested, EBTExtractor should work fine on older versions of iOS 8.
+
+## Thread Safety
+In general, EBTExtractor is thread safe. You may create and use an EBTExtractor on any thread and across other threads.
+
+However, if the values in the original dictionary are mutable and manipulated on a different thread, then the results may be unpredictable and unexpected. This situation is rooted in [Foundation Thread Unsafety](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Multithreading/ThreadSafetySummary/ThreadSafetySummary.html) for mutable classes.
+
+### Unsafe Multithreaded Code
+```objc
+NSMutableString *mutableFooValue = [NSMutableString stringWithString:@"10"];
+EBTExtractor *extractor = [EBTExtractor extractorWithDictionary:@{ @"foo" : mutableFooValue }];
+
+dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    // This may execute before/while/after `numberForKey:` is called below
+    [mutableFooValue appendString:@"20"];
+});
+
+// Race Condition!
+// result may be be @10 or @1020 or something else
+NSNumber *result = [extractor numberForKey:@"foo"];
+
+```
+
+## Testing
+There are thorough collection of unit tests in the Xcode project that cover a variety of conversions between different data types, value sanitization, and graceful handling of incompatible conversions.
+
 ## Methods
 
 * [Value Methods](#value-methods)
