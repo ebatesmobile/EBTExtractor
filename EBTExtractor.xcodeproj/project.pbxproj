@@ -45,6 +45,7 @@
 		31030FCD1A8DAC14001FAFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBTExtractorTests.m; sourceTree = "<group>"; };
 		31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBTExtractorSubclassingTests.m; sourceTree = "<group>"; };
+		799923751AE17F5A00A131F1 /* EBTExtractor+DirectObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EBTExtractor+DirectObject.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				31030FBF1A8DAC14001FAFD9 /* EBTExtractor.h */,
+				799923751AE17F5A00A131F1 /* EBTExtractor+DirectObject.h */,
 				31030FC11A8DAC14001FAFD9 /* EBTExtractor.m */,
 			);
 			path = EBTExtractor;
