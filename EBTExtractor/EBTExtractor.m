@@ -98,7 +98,7 @@
 
 - (NSNumber *)forcedNumberForKey:(id)key
 {
-    return [self.class numberFromObject:self.dictionary[key]] ?: [[NSNumber alloc] initWithInteger:0];
+    return [self.class numberFromObject:self.dictionary[key]] ?: @0;
 }
 
 + (NSNumber *)numberFromObject:(id)object
