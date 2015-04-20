@@ -7,4 +7,5 @@ before_install:
 - brew upgrade xctool
 
 script:
-- xctool clean build clean test -project EBTExtractor.xcodeproj -scheme EBTExtractor -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool clean test -project EBTExtractor.xcodeproj -scheme EBTExtractor -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool clean test -project EBTExtractor.xcodeproj -scheme Extractor -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO

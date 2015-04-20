@@ -18,6 +18,9 @@
 		313B78F11AE2E09800629726 /* EBTExtractor+DirectObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 799923751AE17F5A00A131F1 /* EBTExtractor+DirectObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		313B78F21AE2E09D00629726 /* EBTExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FC11A8DAC14001FAFD9 /* EBTExtractor.m */; };
 		31ADCE161A9870B200C16063 /* EBTExtractorSubclassingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */; };
+		31D0020F1AE4BC420074D7C3 /* EBTExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */; };
+		31D002101AE4BC490074D7C3 /* EBTExtractorSubclassingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */; };
+		31D002131AE4C42E0074D7C3 /* Extractor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 313B78D71AE2E05700629726 /* Extractor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,16 @@
 			dstSubfolderSpec = 16;
 			files = (
 				31030FC01A8DAC14001FAFD9 /* EBTExtractor.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31D002121AE4C40D0074D7C3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				31D002131AE4C42E0074D7C3 /* Extractor.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +271,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 313B78EF1AE2E05700629726 /* Build configuration list for PBXNativeTarget "ExtractorTests" */;
 			buildPhases = (
+				31D002121AE4C40D0074D7C3 /* CopyFiles */,
 				313B78DD1AE2E05700629726 /* Sources */,
 				313B78DE1AE2E05700629726 /* Frameworks */,
 				313B78DF1AE2E05700629726 /* Resources */,
@@ -369,7 +383,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D0020F1AE4BC420074D7C3 /* EBTExtractorTests.m in Sources */,
 				313B78E91AE2E05700629726 /* ExtractorTests.m in Sources */,
+				31D002101AE4BC490074D7C3 /* EBTExtractorSubclassingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +409,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
@@ -451,7 +466,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
@@ -502,6 +516,7 @@
 		31030FD11A8DAC14001FAFD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = EBTExtractor;
 				SKIP_INSTALL = YES;
@@ -511,6 +526,7 @@
 		31030FD21A8DAC14001FAFD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = EBTExtractor;
 				SKIP_INSTALL = YES;
@@ -548,6 +564,7 @@
 		313B78EA1AE2E05700629726 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -562,7 +579,7 @@
 				);
 				INFOPLIST_FILE = Extractor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -575,6 +592,7 @@
 		313B78EB1AE2E05700629726 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -586,7 +604,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = Extractor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -611,7 +629,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ExtractorTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -629,7 +647,7 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ExtractorTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -672,6 +690,7 @@
 				313B78EB1AE2E05700629726 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		313B78EF1AE2E05700629726 /* Build configuration list for PBXNativeTarget "ExtractorTests" */ = {
 			isa = XCConfigurationList;
@@ -680,6 +699,7 @@
 				313B78ED1AE2E05700629726 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
