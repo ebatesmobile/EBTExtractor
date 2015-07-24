@@ -5,7 +5,7 @@ osx_image: xcode6.4
 
 before_install:
 - brew update
-- brew upgrade xctool
+- brew outdated xctool || brew upgrade xctool
 
 script:
 - xctool clean test -project EBTExtractor.xcodeproj -scheme Extractor -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
