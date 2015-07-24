@@ -529,10 +529,8 @@
                 else if (sizeof(NSInteger) == sizeof(int)) {
                     // iOS 8 Bug on 32-bit Devices Occasionally Does Not Return Accurate integerValues
                     // filed rdar://19658050 ; duplicate of rdar://18257823
-                    // Using long long instead for these devices
-                    long long value = [(NSDecimalNumber *)fromObject longLongValue];
-                    NSInteger integerValue = (NSInteger)value;
-                    return @(integerValue);
+                    // Flooring double instead for these devices
+                    return @((NSInteger)floor([(NSDecimalNumber *)fromObject doubleValue]));
                 }
                 else {
                     return @([(NSDecimalNumber *)fromObject integerValue]);
