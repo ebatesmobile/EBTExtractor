@@ -29,7 +29,7 @@
 
 + (instancetype)extractorWithDictionary:(NSDictionary *)dictionary
 {
-    return [[self alloc] initWithDictionary:dictionary];
+    return [(EBTExtractor *)[self alloc] initWithDictionary:dictionary];
 }
 
 - (instancetype)init
