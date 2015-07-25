@@ -7,30 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31030FC01A8DAC14001FAFD9 /* EBTExtractor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31030FBF1A8DAC14001FAFD9 /* EBTExtractor.h */; };
-		31030FC21A8DAC14001FAFD9 /* EBTExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FC11A8DAC14001FAFD9 /* EBTExtractor.m */; };
-		31030FC81A8DAC14001FAFD9 /* libEBTExtractor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31030FBC1A8DAC14001FAFD9 /* libEBTExtractor.a */; };
-		31030FD71A8DAD0E001FAFD9 /* EBTExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */; };
 		313B78DC1AE2E05700629726 /* Extractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 313B78DB1AE2E05700629726 /* Extractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		313B78E21AE2E05700629726 /* Extractor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313B78D71AE2E05700629726 /* Extractor.framework */; };
 		313B78E91AE2E05700629726 /* ExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 313B78E81AE2E05700629726 /* ExtractorTests.m */; };
 		313B78F01AE2E09400629726 /* EBTExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 31030FBF1A8DAC14001FAFD9 /* EBTExtractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		313B78F11AE2E09800629726 /* EBTExtractor+DirectObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 799923751AE17F5A00A131F1 /* EBTExtractor+DirectObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		313B78F21AE2E09D00629726 /* EBTExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FC11A8DAC14001FAFD9 /* EBTExtractor.m */; };
-		31ADCE161A9870B200C16063 /* EBTExtractorSubclassingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */; };
 		31D0020F1AE4BC420074D7C3 /* EBTExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */; };
 		31D002101AE4BC490074D7C3 /* EBTExtractorSubclassingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */; };
 		31D002131AE4C42E0074D7C3 /* Extractor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 313B78D71AE2E05700629726 /* Extractor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		31030FC91A8DAC14001FAFD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 31030FB41A8DAC14001FAFD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 31030FBB1A8DAC14001FAFD9;
-			remoteInfo = EBTExtractor;
-		};
 		313B78E31AE2E05700629726 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 31030FB41A8DAC14001FAFD9 /* Project object */;
@@ -41,16 +29,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		31030FBA1A8DAC14001FAFD9 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				31030FC01A8DAC14001FAFD9 /* EBTExtractor.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		31D002121AE4C40D0074D7C3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,11 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		31030FBC1A8DAC14001FAFD9 /* libEBTExtractor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEBTExtractor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		31030FBF1A8DAC14001FAFD9 /* EBTExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EBTExtractor.h; sourceTree = "<group>"; };
 		31030FC11A8DAC14001FAFD9 /* EBTExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EBTExtractor.m; sourceTree = "<group>"; };
-		31030FC71A8DAC14001FAFD9 /* EBTExtractorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EBTExtractorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		31030FCD1A8DAC14001FAFD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBTExtractorTests.m; sourceTree = "<group>"; };
 		313B78D71AE2E05700629726 /* Extractor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Extractor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		313B78DA1AE2E05700629726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,21 +56,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		31030FB91A8DAC14001FAFD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		31030FC41A8DAC14001FAFD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				31030FC81A8DAC14001FAFD9 /* libEBTExtractor.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		313B78D31AE2E05700629726 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				31030FBE1A8DAC14001FAFD9 /* EBTExtractor */,
-				31030FCB1A8DAC14001FAFD9 /* EBTExtractorTests */,
 				313B78D81AE2E05700629726 /* Extractor */,
 				313B78E51AE2E05700629726 /* ExtractorTests */,
 				31030FBD1A8DAC14001FAFD9 /* Products */,
@@ -128,8 +87,6 @@
 		31030FBD1A8DAC14001FAFD9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				31030FBC1A8DAC14001FAFD9 /* libEBTExtractor.a */,
-				31030FC71A8DAC14001FAFD9 /* EBTExtractorTests.xctest */,
 				313B78D71AE2E05700629726 /* Extractor.framework */,
 				313B78E11AE2E05700629726 /* ExtractorTests.xctest */,
 			);
@@ -144,24 +101,6 @@
 				31030FC11A8DAC14001FAFD9 /* EBTExtractor.m */,
 			);
 			path = EBTExtractor;
-			sourceTree = "<group>";
-		};
-		31030FCB1A8DAC14001FAFD9 /* EBTExtractorTests */ = {
-			isa = PBXGroup;
-			children = (
-				31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */,
-				31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */,
-				31030FCC1A8DAC14001FAFD9 /* Supporting Files */,
-			);
-			path = EBTExtractorTests;
-			sourceTree = "<group>";
-		};
-		31030FCC1A8DAC14001FAFD9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				31030FCD1A8DAC14001FAFD9 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		313B78D81AE2E05700629726 /* Extractor */ = {
@@ -185,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				313B78E81AE2E05700629726 /* ExtractorTests.m */,
+				31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */,
+				31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */,
 				313B78E61AE2E05700629726 /* Supporting Files */,
 			);
 			path = ExtractorTests;
@@ -214,41 +155,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		31030FBB1A8DAC14001FAFD9 /* EBTExtractor */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 31030FD01A8DAC14001FAFD9 /* Build configuration list for PBXNativeTarget "EBTExtractor" */;
-			buildPhases = (
-				31030FB81A8DAC14001FAFD9 /* Sources */,
-				31030FB91A8DAC14001FAFD9 /* Frameworks */,
-				31030FBA1A8DAC14001FAFD9 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = EBTExtractor;
-			productName = EBTExtractor;
-			productReference = 31030FBC1A8DAC14001FAFD9 /* libEBTExtractor.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		31030FC61A8DAC14001FAFD9 /* EBTExtractorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 31030FD31A8DAC14001FAFD9 /* Build configuration list for PBXNativeTarget "EBTExtractorTests" */;
-			buildPhases = (
-				31030FC31A8DAC14001FAFD9 /* Sources */,
-				31030FC41A8DAC14001FAFD9 /* Frameworks */,
-				31030FC51A8DAC14001FAFD9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				31030FCA1A8DAC14001FAFD9 /* PBXTargetDependency */,
-			);
-			name = EBTExtractorTests;
-			productName = EBTExtractorTests;
-			productReference = 31030FC71A8DAC14001FAFD9 /* EBTExtractorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		313B78D61AE2E05700629726 /* Extractor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 313B78EE1AE2E05700629726 /* Build configuration list for PBXNativeTarget "Extractor" */;
@@ -292,15 +198,9 @@
 		31030FB41A8DAC14001FAFD9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Ebates Inc.";
 				TargetAttributes = {
-					31030FBB1A8DAC14001FAFD9 = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					31030FC61A8DAC14001FAFD9 = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
 					313B78D61AE2E05700629726 = {
 						CreatedOnToolsVersion = 6.3;
 					};
@@ -321,8 +221,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				31030FBB1A8DAC14001FAFD9 /* EBTExtractor */,
-				31030FC61A8DAC14001FAFD9 /* EBTExtractorTests */,
 				313B78D61AE2E05700629726 /* Extractor */,
 				313B78E01AE2E05700629726 /* ExtractorTests */,
 			);
@@ -330,13 +228,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		31030FC51A8DAC14001FAFD9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		313B78D51AE2E05700629726 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,23 +245,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		31030FB81A8DAC14001FAFD9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				31030FC21A8DAC14001FAFD9 /* EBTExtractor.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		31030FC31A8DAC14001FAFD9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				31030FD71A8DAD0E001FAFD9 /* EBTExtractorTests.m in Sources */,
-				31ADCE161A9870B200C16063 /* EBTExtractorSubclassingTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		313B78D21AE2E05700629726 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,11 +266,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		31030FCA1A8DAC14001FAFD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 31030FBB1A8DAC14001FAFD9 /* EBTExtractor */;
-			targetProxy = 31030FC91A8DAC14001FAFD9 /* PBXContainerItemProxy */;
-		};
 		313B78E41AE2E05700629726 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 313B78D61AE2E05700629726 /* Extractor */;
@@ -419,26 +288,33 @@
 				CLANG_WARN_ASSIGN_ENUM = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES_AGGRESSIVE;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -448,6 +324,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
 				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
@@ -455,7 +332,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -476,20 +353,27 @@
 				CLANG_WARN_ASSIGN_ENUM = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES_AGGRESSIVE;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -499,6 +383,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
 				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
@@ -506,58 +391,10 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		31030FD11A8DAC14001FAFD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = EBTExtractor;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		31030FD21A8DAC14001FAFD9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = EBTExtractor;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		31030FD41A8DAC14001FAFD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = EBTExtractorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = EBTExtractorTests;
-			};
-			name = Debug;
-		};
-		31030FD51A8DAC14001FAFD9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = EBTExtractorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = EBTExtractorTests;
 			};
 			name = Release;
 		};
@@ -565,22 +402,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = Extractor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebates.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -593,19 +423,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = Extractor/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebates.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -617,39 +443,24 @@
 		313B78EC1AE2E05700629726 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				INFOPLIST_FILE = ExtractorTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebates.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		313B78ED1AE2E05700629726 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_NO_COMMON_BLOCKS = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
 				INFOPLIST_FILE = ExtractorTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebates.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -661,24 +472,6 @@
 			buildConfigurations = (
 				31030FCE1A8DAC14001FAFD9 /* Debug */,
 				31030FCF1A8DAC14001FAFD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		31030FD01A8DAC14001FAFD9 /* Build configuration list for PBXNativeTarget "EBTExtractor" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				31030FD11A8DAC14001FAFD9 /* Debug */,
-				31030FD21A8DAC14001FAFD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		31030FD31A8DAC14001FAFD9 /* Build configuration list for PBXNativeTarget "EBTExtractorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				31030FD41A8DAC14001FAFD9 /* Debug */,
-				31030FD51A8DAC14001FAFD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

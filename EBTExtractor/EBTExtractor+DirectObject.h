@@ -27,36 +27,36 @@
 
 // Primitives
 
-+ (BOOL)boolFromObject:(id)object;
-+ (NSInteger)integerFromObject:(id)object;
-+ (NSUInteger)unsignedIntegerFromObject:(id)object; // negative values will return 0
++ (BOOL)boolFromObject:(nullable id)object;
++ (NSInteger)integerFromObject:(nullable id)object;
++ (NSUInteger)unsignedIntegerFromObject:(nullable id)object; // negative values will return 0
 
 // Objects
 
-+ (NSNumber *)numberFromObject:(id)object; // truncated to integer representation
-+ (NSString *)stringFromObject:(id)object;
-+ (NSDate *)unixDateFromObject:(id)object;
-+ (NSDecimalNumber *)decimalNumberFromObject:(id)object; // never returns NaN
-+ (NSArray *)arrayFromObject:(id)object;
-+ (NSDictionary *)dictionaryFromObject:(id)object;
-+ (instancetype)extractorFromObject:(id)object;
++ (nullable NSNumber *)numberFromObject:(nullable id)object; // truncated to integer representation
++ (nullable NSString *)stringFromObject:(nullable id)object;
++ (nullable NSDate *)unixDateFromObject:(nullable id)object;
++ (nullable NSDecimalNumber *)decimalNumberFromObject:(nullable id)object; // never returns NaN
++ (nullable NSArray *)arrayFromObject:(nullable id)object;
++ (nullable NSDictionary *)dictionaryFromObject:(nullable id)object;
++ (nullable instancetype)extractorFromObject:(nullable id)object;
 
 // Typed Arrays
 
-+ (NSArray *)arrayOfNumbersFromObject:(id)object; // values truncated to integer representation
-+ (NSArray *)arrayOfStringsFromObject:(id)object;
-+ (NSArray *)arrayOfUnixDatesFromObject:(id)object;
-+ (NSArray *)arrayOfDecimalNumbersFromObject:(id)object; // values will never be NaN
-+ (NSArray *)arrayOfArraysFromObject:(id)object;
-+ (NSArray *)arrayOfDictionariesFromObject:(id)object;
-+ (NSArray *)arrayOfExtractorsFromObject:(id)object;
++ (nullable NSArray *)arrayOfNumbersFromObject:(nullable id)object; // values truncated to integer representation
++ (nullable NSArray *)arrayOfStringsFromObject:(nullable id)object;
++ (nullable NSArray *)arrayOfUnixDatesFromObject:(nullable id)object;
++ (nullable NSArray *)arrayOfDecimalNumbersFromObject:(nullable id)object; // values will never be NaN
++ (nullable NSArray *)arrayOfArraysFromObject:(nullable id)object;
++ (nullable NSArray *)arrayOfDictionariesFromObject:(nullable id)object;
++ (nullable NSArray *)arrayOfExtractorsFromObject:(nullable id)object;
 
-+ (NSArray *)arrayOfNumbersFromObject:(id)object unconvertibleMarker:(id)unconvertibleMarker; // values truncated to integer representation
-+ (NSArray *)arrayOfStringsFromObject:(id)object unconvertibleMarker:(id)unconvertibleMarker;
-+ (NSArray *)arrayOfUnixDatesFromObject:(id)object unconvertibleMarker:(id)unconvertibleMarker;
-+ (NSArray *)arrayOfDecimalNumbersFromObject:(id)object unconvertibileMarker:(id)unconvertibileMarker; // values will never be NaN
-+ (NSArray *)arrayOfArraysFromObject:(id)object unconvertibileMarker:(id)unconvertibleMarker;
-+ (NSArray *)arrayOfDictionariesFromObject:(id)object unconvertibleMarker:(id)unconvertibleMarker;
-+ (NSArray *)arrayOfExtractorsFromObject:(id)object unconvertibleMarker:(id)unconvertibleMarker;
++ (nullable NSArray *)arrayOfNumbersFromObject:(nullable id)object unconvertibleMarker:(nullable id)unconvertibleMarker; // values truncated to integer representation
++ (nullable NSArray *)arrayOfStringsFromObject:(nullable id)object unconvertibleMarker:(nullable id)unconvertibleMarker;
++ (nullable NSArray *)arrayOfUnixDatesFromObject:(nullable id)object unconvertibleMarker:(nullable id)unconvertibleMarker;
++ (nullable NSArray *)arrayOfDecimalNumbersFromObject:(nullable id)object unconvertibileMarker:(nullable id)unconvertibileMarker; // values will never be NaN
++ (nullable NSArray *)arrayOfArraysFromObject:(nullable id)object unconvertibileMarker:(nullable id)unconvertibleMarker;
++ (nullable NSArray *)arrayOfDictionariesFromObject:(nullable id)object unconvertibleMarker:(nullable id)unconvertibleMarker;
++ (nullable NSArray *)arrayOfExtractorsFromObject:(nullable id)object unconvertibleMarker:(nullable id)unconvertibleMarker;
 
 @end

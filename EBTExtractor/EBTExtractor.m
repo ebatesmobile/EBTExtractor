@@ -29,7 +29,7 @@
 
 + (instancetype)extractorWithDictionary:(NSDictionary *)dictionary
 {
-    return [[self alloc] initWithDictionary:dictionary];
+    return [(EBTExtractor *)[self alloc] initWithDictionary:dictionary];
 }
 
 - (instancetype)init
@@ -529,10 +529,10 @@
                 else if (sizeof(NSInteger) == sizeof(int)) {
                     // iOS 8 Bug on 32-bit Devices Occasionally Does Not Return Accurate integerValues
                     // filed rdar://19658050 ; duplicate of rdar://18257823
-                    // Using long long instead for these devices
-                    long long value = [(NSDecimalNumber *)fromObject longLongValue];
-                    NSInteger integerValue = (NSInteger)value;
-                    return @(integerValue);
+                    // Flooring/ceiling double instead for these devices
+                    double doubleValue = [(NSDecimalNumber *)fromObject doubleValue];
+                    NSInteger truncatedValue = doubleValue < 0.0 ? (NSInteger)ceil(doubleValue) : (NSInteger)floor(doubleValue);
+                    return @(truncatedValue);
                 }
                 else {
                     return @([(NSDecimalNumber *)fromObject integerValue]);

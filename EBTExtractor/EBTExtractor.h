@@ -25,11 +25,13 @@
 
 @interface EBTExtractor : NSObject
 
-+ (instancetype)extractorWithDictionary:(NSDictionary *)dictionary;
++ (nullable instancetype)extractorWithDictionary:(nullable NSDictionary *)dictionary;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary NS_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithDictionary:(nullable NSDictionary *)dictionary NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic, copy, readonly) NSDictionary *dictionary;
+@property (nonatomic, copy, readonly, nonnull) NSDictionary *dictionary;
+
+NS_ASSUME_NONNULL_BEGIN
 
 // Primitives
 
@@ -39,31 +41,31 @@
 
 // Objects
 
-- (NSNumber *)numberForKey:(id)key; // truncated to integer representation
-- (NSString *)stringForKey:(id)key;
-- (NSDate *)unixDateForKey:(id)key;
-- (NSDecimalNumber *)decimalNumberForKey:(id)key; // never returns NaN
-- (NSArray *)arrayForKey:(id)key;
-- (NSDictionary *)dictionaryForKey:(id)key;
-- (instancetype)extractorForKey:(id)key;
+- (nullable NSNumber *)numberForKey:(id)key; // truncated to integer representation
+- (nullable NSString *)stringForKey:(id)key;
+- (nullable NSDate *)unixDateForKey:(id)key;
+- (nullable NSDecimalNumber *)decimalNumberForKey:(id)key; // never returns NaN
+- (nullable NSArray *)arrayForKey:(id)key;
+- (nullable NSDictionary *)dictionaryForKey:(id)key;
+- (nullable instancetype)extractorForKey:(id)key;
 
 // Typed Arrays
 
-- (NSArray *)arrayOfNumbersForKey:(id)key; // values truncated to integer representation
-- (NSArray *)arrayOfStringsForKey:(id)key;
-- (NSArray *)arrayOfUnixDatesForKey:(id)key;
-- (NSArray *)arrayOfDecimalNumbersForKey:(id)key; // values will never be NaN
-- (NSArray *)arrayOfArraysForKey:(id)key;
-- (NSArray *)arrayOfDictionariesForKey:(id)key;
-- (NSArray *)arrayOfExtractorsForKey:(id)key;
+- (nullable NSArray *)arrayOfNumbersForKey:(id)key; // values truncated to integer representation
+- (nullable NSArray *)arrayOfStringsForKey:(id)key;
+- (nullable NSArray *)arrayOfUnixDatesForKey:(id)key;
+- (nullable NSArray *)arrayOfDecimalNumbersForKey:(id)key; // values will never be NaN
+- (nullable NSArray *)arrayOfArraysForKey:(id)key;
+- (nullable NSArray *)arrayOfDictionariesForKey:(id)key;
+- (nullable NSArray *)arrayOfExtractorsForKey:(id)key;
 
-- (NSArray *)arrayOfNumbersForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker; // values truncated to integer representation
-- (NSArray *)arrayOfStringsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
-- (NSArray *)arrayOfUnixDatesForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
-- (NSArray *)arrayOfDecimalNumbersForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker; // values will never be NaN
-- (NSArray *)arrayOfArraysForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
-- (NSArray *)arrayOfDictionariesForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
-- (NSArray *)arrayOfExtractorsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
+- (nullable NSArray *)arrayOfNumbersForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker; // values truncated to integer representation
+- (nullable NSArray *)arrayOfStringsForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
+- (nullable NSArray *)arrayOfUnixDatesForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
+- (nullable NSArray *)arrayOfDecimalNumbersForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker; // values will never be NaN
+- (nullable NSArray *)arrayOfArraysForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
+- (nullable NSArray *)arrayOfDictionariesForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
+- (nullable NSArray *)arrayOfExtractorsForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
 
 // Forced Objects
 
@@ -77,12 +79,14 @@
 
 // Forced Typed Arrays
 
-- (NSArray *)forcedArrayOfNumbersForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker; // values truncated to integer representation
-- (NSArray *)forcedArrayOfStringsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
-- (NSArray *)forcedArrayOfUnixDatesForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
-- (NSArray *)forcedArrayOfDecimalNumbersForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;  // values will never be NaN
-- (NSArray *)forcedArrayOfArraysForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
-- (NSArray *)forcedArrayOfDictionariesForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
-- (NSArray *)forcedArrayOfExtractorsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker;
+- (NSArray *)forcedArrayOfNumbersForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker; // values truncated to integer representation
+- (NSArray *)forcedArrayOfStringsForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
+- (NSArray *)forcedArrayOfUnixDatesForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
+- (NSArray *)forcedArrayOfDecimalNumbersForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;  // values will never be NaN
+- (NSArray *)forcedArrayOfArraysForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
+- (NSArray *)forcedArrayOfDictionariesForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
+- (NSArray *)forcedArrayOfExtractorsForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
+
+NS_ASSUME_NONNULL_END
 
 @end
