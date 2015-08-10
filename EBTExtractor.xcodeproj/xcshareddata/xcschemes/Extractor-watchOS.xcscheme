@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "313B78D61AE2E05700629726"
+               BlueprintIdentifier = "31F7F6231B79314900F542D6"
                BuildableName = "Extractor.framework"
-               BlueprintName = "Extractor"
-               ReferencedContainer = "container:EBTExtractor.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "313B78E01AE2E05700629726"
-               BuildableName = "ExtractorTests.xctest"
-               BlueprintName = "ExtractorTests"
+               BlueprintName = "Extractor-watchOS"
                ReferencedContainer = "container:EBTExtractor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,26 +30,7 @@
       codeCoverageEnabled = "YES"
       enableAddressSanitizer = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "313B78E01AE2E05700629726"
-               BuildableName = "ExtractorTests.xctest"
-               BlueprintName = "ExtractorTests"
-               ReferencedContainer = "container:EBTExtractor.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "313B78D61AE2E05700629726"
-            BuildableName = "Extractor.framework"
-            BlueprintName = "Extractor"
-            ReferencedContainer = "container:EBTExtractor.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -80,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "313B78D61AE2E05700629726"
+            BlueprintIdentifier = "31F7F6231B79314900F542D6"
             BuildableName = "Extractor.framework"
-            BlueprintName = "Extractor"
+            BlueprintName = "Extractor-watchOS"
             ReferencedContainer = "container:EBTExtractor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -98,9 +65,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "313B78D61AE2E05700629726"
+            BlueprintIdentifier = "31F7F6231B79314900F542D6"
             BuildableName = "Extractor.framework"
-            BlueprintName = "Extractor"
+            BlueprintName = "Extractor-watchOS"
             ReferencedContainer = "container:EBTExtractor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

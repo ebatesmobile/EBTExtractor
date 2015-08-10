@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "313B78D61AE2E05700629726"
+               BlueprintIdentifier = "31DD04C41B79334800C63ABE"
                BuildableName = "Extractor.framework"
-               BlueprintName = "Extractor"
-               ReferencedContainer = "container:EBTExtractor.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "313B78E01AE2E05700629726"
-               BuildableName = "ExtractorTests.xctest"
-               BlueprintName = "ExtractorTests"
+               BlueprintName = "Extractor-OSX"
                ReferencedContainer = "container:EBTExtractor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,9 +34,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "313B78E01AE2E05700629726"
-               BuildableName = "ExtractorTests.xctest"
-               BlueprintName = "ExtractorTests"
+               BlueprintIdentifier = "31DD04CD1B79334800C63ABE"
+               BuildableName = "Extractor-OSXTests.xctest"
+               BlueprintName = "Extractor-OSXTests"
                ReferencedContainer = "container:EBTExtractor.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,9 +44,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "313B78D61AE2E05700629726"
+            BlueprintIdentifier = "31DD04C41B79334800C63ABE"
             BuildableName = "Extractor.framework"
-            BlueprintName = "Extractor"
+            BlueprintName = "Extractor-OSX"
             ReferencedContainer = "container:EBTExtractor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,9 +66,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "313B78D61AE2E05700629726"
+            BlueprintIdentifier = "31DD04C41B79334800C63ABE"
             BuildableName = "Extractor.framework"
-            BlueprintName = "Extractor"
+            BlueprintName = "Extractor-OSX"
             ReferencedContainer = "container:EBTExtractor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -98,9 +84,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "313B78D61AE2E05700629726"
+            BlueprintIdentifier = "31DD04C41B79334800C63ABE"
             BuildableName = "Extractor.framework"
-            BlueprintName = "Extractor"
+            BlueprintName = "Extractor-OSX"
             ReferencedContainer = "container:EBTExtractor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
