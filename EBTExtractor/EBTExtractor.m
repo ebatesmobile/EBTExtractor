@@ -222,11 +222,6 @@
     return [self.class arrayOfNumbersFromObject:self.dictionary[key] unconvertibleMarker:unconvertibleMarker];
 }
 
-- (NSArray *)forcedArrayOfNumbersForKey:(id)key
-{
-    return [self.class arrayOfNumbersFromObject:self.dictionary[key]] ?: @[];
-}
-
 - (NSArray *)forcedArrayOfNumbersForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker
 {
     return [self.class arrayOfNumbersFromObject:self.dictionary[key] unconvertibleMarker:unconvertibleMarker] ?: @[];
@@ -252,11 +247,6 @@
 - (NSArray *)arrayOfStringsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker
 {
     return [self.class arrayOfStringsFromObject:self.dictionary[key] unconvertibleMarker:unconvertibleMarker];
-}
-
-- (NSArray *)forcedArrayOfStringsForKey:(id)key
-{
-    return [self.class arrayOfStringsFromObject:self.dictionary[key]] ?: @[];
 }
 
 - (NSArray *)forcedArrayOfStringsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker
@@ -286,11 +276,6 @@
     return [self.class arrayOfUnixDatesFromObject:self.dictionary[key] unconvertibleMarker:unconvertibleMarker];
 }
 
-- (NSArray *)forcedArrayOfUnixDatesForKey:(id)key
-{
-    return [self.class arrayOfUnixDatesFromObject:self.dictionary[key]] ?: @[];
-}
-
 - (NSArray *)forcedArrayOfUnixDatesForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker
 {
     return [self.class arrayOfUnixDatesFromObject:self.dictionary[key] unconvertibleMarker:unconvertibleMarker] ?: @[];
@@ -316,11 +301,6 @@
 - (NSArray *)arrayOfDecimalNumbersForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker
 {
     return [self.class arrayOfDecimalNumbersFromObject:self.dictionary[key] unconvertibileMarker:unconvertibleMarker];
-}
-
-- (NSArray *)forcedArrayOfDecimalNumbersForKey:(id)key
-{
-    return [self.class arrayOfDecimalNumbersFromObject:self.dictionary[key]] ?: @[];
 }
 
 - (NSArray *)forcedArrayOfDecimalNumbersForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker
@@ -350,11 +330,6 @@
     return [self.class arrayOfArraysFromObject:self.dictionary[key] unconvertibileMarker:unconvertibleMarker];
 }
 
-- (NSArray *)forcedArrayOfArraysForKey:(id)key
-{
-    return [self.class arrayOfArraysFromObject:self.dictionary[key]] ?: @[];
-}
-
 - (NSArray *)forcedArrayOfArraysForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker
 {
     return [self.class arrayOfArraysFromObject:self.dictionary[key] unconvertibileMarker:unconvertibleMarker] ?: @[];
@@ -382,11 +357,6 @@
     return [self.class arrayOfDictionariesFromObject:self.dictionary[key] unconvertibleMarker:unconvertibleMarker];
 }
 
-- (NSArray *)forcedArrayOfDictionariesForKey:(id)key
-{
-    return [self.class arrayOfDictionariesFromObject:self.dictionary[key]] ?: @[];
-}
-
 - (NSArray *)forcedArrayOfDictionariesForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker
 {
     return [self.class arrayOfDictionariesFromObject:self.dictionary[key] unconvertibleMarker:unconvertibleMarker] ?: @[];
@@ -412,11 +382,6 @@
 - (NSArray *)arrayOfExtractorsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker
 {
     return [self.class arrayOfExtractorsFromObject:self.dictionary[key] unconvertibleMarker:unconvertibleMarker];
-}
-
-- (NSArray *)forcedArrayOfExtractorsForKey:(id)key
-{
-    return [self.class arrayOfExtractorsFromObject:self.dictionary[key]] ?: @[];
 }
 
 - (NSArray *)forcedArrayOfExtractorsForKey:(id)key unconvertibleMarker:(id)unconvertibleMarker
