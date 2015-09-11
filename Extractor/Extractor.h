@@ -14,7 +14,10 @@ FOUNDATION_EXPORT double ExtractorVersionNumber;
 //! Project version string for Extractor.
 FOUNDATION_EXPORT const unsigned char ExtractorVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <Extractor/PublicHeader.h>
-
+#if TARGET_OS_WATCH
+#import <ExtractorWatch/EBTExtractor.h>
+#import <ExtractorWatch/EBTExtractor+DirectObject.h>
+#else
 #import <Extractor/EBTExtractor.h>
 #import <Extractor/EBTExtractor+DirectObject.h>
+#endif

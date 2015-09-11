@@ -13,6 +13,7 @@
 		313B78F01AE2E09400629726 /* EBTExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 31030FBF1A8DAC14001FAFD9 /* EBTExtractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		313B78F11AE2E09800629726 /* EBTExtractor+DirectObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 799923751AE17F5A00A131F1 /* EBTExtractor+DirectObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		313B78F21AE2E09D00629726 /* EBTExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FC11A8DAC14001FAFD9 /* EBTExtractor.m */; };
+		3161A2E71BA22B79000D3387 /* ExtractorWatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 3161A2E61BA22B79000D3387 /* ExtractorWatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31B12FF91B79347E00C04419 /* EBTExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 31030FBF1A8DAC14001FAFD9 /* EBTExtractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31B12FFA1B79348200C04419 /* EBTExtractor+DirectObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 799923751AE17F5A00A131F1 /* EBTExtractor+DirectObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31B12FFB1B79348700C04419 /* EBTExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FC11A8DAC14001FAFD9 /* EBTExtractor.m */; };
@@ -81,10 +82,11 @@
 		313B78E11AE2E05700629726 /* ExtractorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExtractorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		313B78E71AE2E05700629726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		313B78E81AE2E05700629726 /* ExtractorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtractorTests.m; sourceTree = "<group>"; };
+		3161A2E61BA22B79000D3387 /* ExtractorWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtractorWatch.h; sourceTree = "<group>"; };
 		31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBTExtractorSubclassingTests.m; sourceTree = "<group>"; };
 		31DD04C51B79334800C63ABE /* Extractor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Extractor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31DD04CE1B79334800C63ABE /* Extractor-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Extractor-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31F7F6241B79314900F542D6 /* Extractor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Extractor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31F7F6241B79314900F542D6 /* ExtractorWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExtractorWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		799923751AE17F5A00A131F1 /* EBTExtractor+DirectObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EBTExtractor+DirectObject.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,7 +146,7 @@
 			children = (
 				313B78D71AE2E05700629726 /* Extractor.framework */,
 				313B78E11AE2E05700629726 /* ExtractorTests.xctest */,
-				31F7F6241B79314900F542D6 /* Extractor.framework */,
+				31F7F6241B79314900F542D6 /* ExtractorWatch.framework */,
 				31DD04C51B79334800C63ABE /* Extractor.framework */,
 				31DD04CE1B79334800C63ABE /* Extractor-OSXTests.xctest */,
 			);
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				313B78DB1AE2E05700629726 /* Extractor.h */,
+				3161A2E61BA22B79000D3387 /* ExtractorWatch.h */,
 				313B78D91AE2E05700629726 /* Supporting Files */,
 			);
 			path = Extractor;
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31F7F62E1B7931BF00F542D6 /* EBTExtractor+DirectObject.h in Headers */,
+				3161A2E71BA22B79000D3387 /* ExtractorWatch.h in Headers */,
 				31F7F62C1B7931B700F542D6 /* Extractor.h in Headers */,
 				31F7F62D1B7931BB00F542D6 /* EBTExtractor.h in Headers */,
 			);
@@ -322,7 +326,7 @@
 			);
 			name = "Extractor-watchOS";
 			productName = "Extractor-watchOS";
-			productReference = 31F7F6241B79314900F542D6 /* Extractor.framework */;
+			productReference = 31F7F6241B79314900F542D6 /* ExtractorWatch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -758,7 +762,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebates.Extractor;
-				PRODUCT_NAME = Extractor;
+				PRODUCT_NAME = ExtractorWatch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -781,7 +785,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebates.Extractor;
-				PRODUCT_NAME = Extractor;
+				PRODUCT_NAME = ExtractorWatch;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
