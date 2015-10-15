@@ -51,13 +51,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Typed Arrays
 
-- (nullable NSArray *)arrayOfNumbersForKey:(id)key; // values truncated to integer representation
-- (nullable NSArray *)arrayOfStringsForKey:(id)key;
-- (nullable NSArray *)arrayOfUnixDatesForKey:(id)key;
-- (nullable NSArray *)arrayOfDecimalNumbersForKey:(id)key; // values will never be NaN
-- (nullable NSArray *)arrayOfArraysForKey:(id)key;
-- (nullable NSArray *)arrayOfDictionariesForKey:(id)key;
-- (nullable NSArray *)arrayOfExtractorsForKey:(id)key;
+- (nullable NSArray<NSNumber *> *)arrayOfNumbersForKey:(id)key; // values truncated to integer representation
+- (nullable NSArray<NSString *> *)arrayOfStringsForKey:(id)key;
+- (nullable NSArray<NSDate *> *)arrayOfUnixDatesForKey:(id)key;
+- (nullable NSArray<NSDecimalNumber *> *)arrayOfDecimalNumbersForKey:(id)key; // values will never be NaN
+- (nullable NSArray<NSArray *> *)arrayOfArraysForKey:(id)key;
+- (nullable NSArray<NSDictionary *> *)arrayOfDictionariesForKey:(id)key;
+- (nullable NSArray<EBTExtractor *> *)arrayOfExtractorsForKey:(id)key;
 
 - (nullable NSArray *)arrayOfNumbersForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker; // values truncated to integer representation
 - (nullable NSArray *)arrayOfStringsForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
