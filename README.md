@@ -86,13 +86,6 @@ if ([response isKindOfClass:[NSDictionary class]]) {
 }
 ```
 
-## Supported OS Versions
-* Fully Supported and Tested On:
-    * iOS 7
-    * iOS 8
-
-Although not tested, EBTExtractor should work fine on older versions of iOS 8.
-
 ## Thread Safety
 In general, EBTExtractor is thread safe. You may create and use an EBTExtractor on any thread and across other threads.
 
