@@ -36,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 // Primitives
 
 - (BOOL)boolForKey:(id)key;
+- (BOOL)boolForKey:(id)key defaultValue:(BOOL)defaultValue;
 - (NSInteger)integerForKey:(id)key;
 - (NSUInteger)unsignedIntegerForKey:(id)key; // negative values will return 0
 
