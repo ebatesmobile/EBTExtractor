@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable NSArray<NSDecimalNumber *> *)arrayOfDecimalNumbersForKey:(id)key; // values will never be NaN
 - (nullable NSArray<NSArray *> *)arrayOfArraysForKey:(id)key;
 - (nullable NSArray<NSDictionary *> *)arrayOfDictionariesForKey:(id)key;
-- (nullable NSArray<EBTExtractor *> *)arrayOfExtractorsForKey:(id)key;
+- (nullable NSArray<__kindof EBTExtractor *> *)arrayOfExtractorsForKey:(id)key;
 
 - (nullable NSArray *)arrayOfNumbersForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker; // values truncated to integer representation
 - (nullable NSArray *)arrayOfStringsForKey:(id)key unconvertibleMarker:(nullable id)unconvertibleMarker;
