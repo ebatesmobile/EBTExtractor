@@ -59,6 +59,16 @@
     return [self.class boolFromObject:self.dictionary[key]];
 }
 
+- (BOOL)boolForKey:(id)key defaultValue:(BOOL)defaultValue
+{
+    if ([self.class numberFromObject:self.dictionary[key]]) {
+        return [self boolForKey:key];
+    }
+    else {
+        return defaultValue;
+    }
+}
+
 + (BOOL)boolFromObject:(id)object
 {
     return [[self numberFromObject:object] boolValue];
