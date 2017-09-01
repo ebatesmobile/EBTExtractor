@@ -4,9 +4,12 @@
 language: objective-c
 osx_image: xcode8
 
+before_install:
+  - gem install slather
 script:
   - xcodebuild clean build test -project EBTExtractor.xcodeproj -scheme Extractor -sdk iphonesimulator -enableCodeCoverage=YES -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0'
   - xcodebuild clean test -project EBTExtractor.xcodeproj -scheme Extractor-OSX -sdk macosx ONLY_ACTIVE_ARCH=NO -enableCodeCoverage=YES
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'Extractor'
   - bash <(curl -s https://codecov.io/bash) -J 'Extractor-OSX'  
+  - slather
