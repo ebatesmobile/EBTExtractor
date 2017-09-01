@@ -1,6 +1,7 @@
 # EBTExtractor
 [![Build Status](https://travis-ci.org/ebatesmobile/EBTExtractor.svg?branch=master)](https://travis-ci.org/ebatesmobile/EBTExtractor)
 ![codecov.io](https://img.shields.io/codecov/c/github/ebatesmobile/EBTExtractor.svg)
+[![Coverage Status](https://coveralls.io/repos/github/ebatesmobile/EBTExtractor/badge.svg?branch=gm%2Fcoveralls)](https://coveralls.io/github/ebatesmobile/EBTExtractor?branch=gm%2Fcoveralls)
 
 An Objective-C type coercion helper for JSON-derived dictionaries.
 
