@@ -807,7 +807,7 @@
 			};
 			name = Release;
 		};
-		616AF7791FD61DB3000FF69F /* Testing */ = {
+		616AF7791FD61DB3000FF69F /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -878,9 +878,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
-			name = Testing;
+			name = Test;
 		};
-		616AF77A1FD61DB3000FF69F /* Testing */ = {
+		616AF77A1FD61DB3000FF69F /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -900,9 +900,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Testing;
+			name = Test;
 		};
-		616AF77B1FD61DB3000FF69F /* Testing */ = {
+		616AF77B1FD61DB3000FF69F /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
@@ -912,9 +912,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Testing;
+			name = Test;
 		};
-		616AF77C1FD61DB3000FF69F /* Testing */ = {
+		616AF77C1FD61DB3000FF69F /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -936,9 +936,9 @@
 				VERSION_INFO_PREFIX = "";
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
-			name = Testing;
+			name = Test;
 		};
-		616AF77D1FD61DB3000FF69F /* Testing */ = {
+		616AF77D1FD61DB3000FF69F /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -960,9 +960,9 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Testing;
+			name = Test;
 		};
-		616AF77E1FD61DB3000FF69F /* Testing */ = {
+		616AF77E1FD61DB3000FF69F /* Test */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = NO;
@@ -975,7 +975,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
-			name = Testing;
+			name = Test;
 		};
 /* End XCBuildConfiguration section */
 
@@ -984,7 +984,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				31030FCE1A8DAC14001FAFD9 /* Debug */,
-				616AF7791FD61DB3000FF69F /* Testing */,
+				616AF7791FD61DB3000FF69F /* Test */,
 				31030FCF1A8DAC14001FAFD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -994,7 +994,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				313B78EA1AE2E05700629726 /* Debug */,
-				616AF77A1FD61DB3000FF69F /* Testing */,
+				616AF77A1FD61DB3000FF69F /* Test */,
 				313B78EB1AE2E05700629726 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1004,7 +1004,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				313B78EC1AE2E05700629726 /* Debug */,
-				616AF77B1FD61DB3000FF69F /* Testing */,
+				616AF77B1FD61DB3000FF69F /* Test */,
 				313B78ED1AE2E05700629726 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1014,7 +1014,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				31DD04D71B79334900C63ABE /* Debug */,
-				616AF77D1FD61DB3000FF69F /* Testing */,
+				616AF77D1FD61DB3000FF69F /* Test */,
 				31DD04D81B79334900C63ABE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1024,7 +1024,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				31DD04DA1B79334900C63ABE /* Debug */,
-				616AF77E1FD61DB3000FF69F /* Testing */,
+				616AF77E1FD61DB3000FF69F /* Test */,
 				31DD04DB1B79334900C63ABE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1034,7 +1034,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				31F7F62A1B79314900F542D6 /* Debug */,
-				616AF77C1FD61DB3000FF69F /* Testing */,
+				616AF77C1FD61DB3000FF69F /* Test */,
 				31F7F62B1B79314900F542D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
