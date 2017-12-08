@@ -57,6 +57,15 @@
       @"numberH" : @(7.999999),
       @"numberI" : @(-835.452),
       @"numberJ" : @(685885182),
+      @"numberK" : @(1000),
+      @"numberL" : @(2000),
+      @"numberM" : @(-1000),
+      @"numberN" : @(8000),
+      @"numberO" : @(-5000),
+      @"numberP" : @(5241.95),
+      @"numberQ" : @(7999.999),
+      @"numberR" : @(-835452),
+      @"numberS" : @(685885182000),
       
       @"decimalA" : [NSDecimalNumber decimalNumberWithString:@"0.00" locale:locale],
       @"decimalB" : [NSDecimalNumber decimalNumberWithString:@"4.13" locale:locale],
@@ -69,6 +78,15 @@
       @"decimalI" : [NSDecimalNumber decimalNumberWithString:@"1415250000.34642456" locale:locale],
       @"decimalJ" : [NSDecimalNumber decimalNumberWithString:@"saddle" locale:locale],
       @"decimalK" : [NSDecimalNumber decimalNumberWithString:@"0.0000001" locale:locale],
+      @"decimalM" : [NSDecimalNumber decimalNumberWithString:@"4130" locale:locale],
+      @"decimalN" : [NSDecimalNumber decimalNumberWithString:@"6990" locale:locale],
+      @"decimalO" : [NSDecimalNumber decimalNumberWithString:@"-3010" locale:locale],
+      @"decimalP" : [NSDecimalNumber decimalNumberWithString:@"18240" locale:locale],
+      @"decimalQ" : [NSDecimalNumber decimalNumberWithString:@"42504.245679" locale:locale],
+      @"decimalR" : [NSDecimalNumber decimalNumberWithString:@"13000" locale:locale],
+      @"decimalS" : [NSDecimalNumber decimalNumberWithString:@"1415210903000" locale:locale],
+      @"decimalT" : [NSDecimalNumber decimalNumberWithString:@"1415250000346.42456" locale:locale],
+      @"decimalU" : [NSDecimalNumber decimalNumberWithString:@"0.0001" locale:locale],
       
       @"stringA" : @"potato",
       @"stringB" : @"",
@@ -96,6 +114,12 @@
       @"stringX" : @"0 changes",
       @"stringY" : @".009",
       @"stringZ" : @"-2.5006e3",
+      @"stringZA" : @"5000",
+      @"stringZB" : @"8450",
+      @"stringZC" : @"-5840",
+      @"stringZD" : @"35452.45",
+      @"stringZE" : @"$99450",
+      @"stringZF" : @"$1049.45",
       
       @"dateA" : @(-5482343),
       @"dateB" : @(1415162234),
@@ -788,6 +812,110 @@
     XCTAssertEqualObjects([extractor forcedUnixDateForKey:@5181], [NSDate dateWithTimeIntervalSince1970:0]);
     XCTAssertEqualObjects([extractor unixDateForKey:@5182], [NSDate dateWithTimeIntervalSince1970:18]);
     XCTAssertEqualObjects([extractor unixDateForKey:@5183], [NSDate dateWithTimeIntervalSince1970:743]);
+}
+
+- (void)testUnixDateForMillisecondsKey
+{
+    XCTAssertNil([self.emptyExtractor unixDateForMillisecondsKey:@"none"]);
+    XCTAssertEqualObjects([self.emptyExtractor forcedUnixDateForMillisecondsKey:@"none"], [NSDate dateWithTimeIntervalSince1970:0]);
+    XCTAssertNil([self.extractor unixDateForMillisecondsKey:@"none"]);
+    XCTAssertEqualObjects([self.extractor forcedUnixDateForMillisecondsKey:@"none"], [NSDate dateWithTimeIntervalSince1970:0]);
+
+    EBTExtractor *extractor = self.extractor;
+    NSLocale *locale = [NSLocale systemLocale];
+
+    XCTAssertEqualWithAccuracy([[extractor unixDateForMillisecondsKey:@"boolA"] timeIntervalSince1970], 0, 0.01);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"boolB"]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@"boolB"], [NSDate dateWithTimeIntervalSince1970:0]);
+
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"numberA"]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@"numberA"], [NSDate dateWithTimeIntervalSince1970:0]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"numberK"], [NSDate dateWithTimeIntervalSince1970:1]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"numberL"], [NSDate dateWithTimeIntervalSince1970:2]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"numberM"], [NSDate dateWithTimeIntervalSince1970:-1]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"numberN"], [NSDate dateWithTimeIntervalSince1970:8]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"numberO"], [NSDate dateWithTimeIntervalSince1970:-5]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"numberP"], [NSDate dateWithTimeIntervalSince1970:5.24195]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"numberQ"], [NSDate dateWithTimeIntervalSince1970:7.999999]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"numberR"], [NSDate dateWithTimeIntervalSince1970:-835.452]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"numberS"], [NSDate dateWithTimeIntervalSince1970:685885182]);
+
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"decimalA"]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@"decimalA"], [NSDate dateWithTimeIntervalSince1970:0]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"decimalM"], [NSDate dateWithTimeIntervalSince1970:4.13]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"decimalN"], [NSDate dateWithTimeIntervalSince1970:6.99]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"decimalO"], [NSDate dateWithTimeIntervalSince1970:-3.01]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"decimalP"], [NSDate dateWithTimeIntervalSince1970:18.24]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"decimalQ"], [NSDate dateWithTimeIntervalSince1970:42.504245679]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"decimalR"], [NSDate dateWithTimeIntervalSince1970:13]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"decimalS"], [NSDate dateWithTimeIntervalSince1970:1415210903]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"decimalT"], [NSDate dateWithTimeIntervalSince1970:[[NSDecimalNumber decimalNumberWithString:@"1415250000.34642456" locale:locale] doubleValue]]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"decimalJ"]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@"decimalJ"], [NSDate dateWithTimeIntervalSince1970:0]);
+    XCTAssertEqualWithAccuracy([[extractor unixDateForMillisecondsKey:@"decimalK"] timeIntervalSince1970], 0, 0.01);
+
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringA"]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@"stringA"], [NSDate dateWithTimeIntervalSince1970:0]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringB"]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@"stringB"], [NSDate dateWithTimeIntervalSince1970:0]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringC"]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringZA"], [NSDate dateWithTimeIntervalSince1970:5]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringZB"], [NSDate dateWithTimeIntervalSince1970:8.45]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringZC"], [NSDate dateWithTimeIntervalSince1970:-5.84]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringG"]);
+    XCTAssertEqualWithAccuracy([[extractor unixDateForMillisecondsKey:@"stringZD"] timeIntervalSince1970], 35.45, 0.01);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringZE"], [NSDate dateWithTimeIntervalSince1970:99.45]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringJ"], [NSDate dateWithTimeIntervalSince1970:0.001]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringZF"], [NSDate dateWithTimeIntervalSince1970:1.04945]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringK"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringL"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringM"]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringN"], [NSDate dateWithTimeIntervalSince1970:0.001]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringO"]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringP"], [NSDate dateWithTimeIntervalSince1970:1413172.8]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringQ"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringR"]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringS"], [NSDate dateWithTimeIntervalSince1970:72.345]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringT"], [NSDate dateWithTimeIntervalSince1970:0.011]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringU"], [NSDate dateWithTimeIntervalSince1970:0.088]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringV"], [NSDate dateWithTimeIntervalSince1970:[[NSDecimalNumber decimalNumberWithString:@"0.0215" locale:locale] doubleValue]]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringW"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"stringX"]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringY"], [NSDate dateWithTimeIntervalSince1970:0.000009]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"stringZ"], [NSDate dateWithTimeIntervalSince1970:[[NSDecimalNumber decimalNumberWithString:@"-2.5006" locale:locale] doubleValue]]);
+
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"dateA"], [NSDate dateWithTimeIntervalSince1970:-5482.343]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"dateB"], [NSDate dateWithTimeIntervalSince1970:1415162.234]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@"dateB"], [NSDate dateWithTimeIntervalSince1970:1415162.234]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"dateC"], [NSDate dateWithTimeIntervalSince1970:[[NSDecimalNumber decimalNumberWithString:@"1451606.400545684" locale:locale] doubleValue]]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"dateD"], [NSDate dateWithTimeIntervalSince1970:2.012]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"dateE"], [NSDate dateWithTimeIntervalSince1970:2.013]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@"dateF"], [NSDate dateWithTimeIntervalSince1970:2.014]);
+
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"nullA"]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@"nullA"], [NSDate dateWithTimeIntervalSince1970:0]);
+
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"arrayEmpty"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"arrayStringA"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"arrayNumberA"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"arrayMixA"]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@"arrayMixA"], [NSDate dateWithTimeIntervalSince1970:0]);
+
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"dictionaryEmpty"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"dictionaryStringStringA"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"dictionaryStringNumberA"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"dictionaryNumberStringA"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"dictionaryMixMixA"]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@"dictionaryMixMixA"], [NSDate dateWithTimeIntervalSince1970:0]);
+
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"garbageA"]);
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@"garbageB"]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@"garbageB"], [NSDate dateWithTimeIntervalSince1970:0]);
+
+    XCTAssertNil([extractor unixDateForMillisecondsKey:@5181]);
+    XCTAssertEqualObjects([extractor forcedUnixDateForMillisecondsKey:@5181], [NSDate dateWithTimeIntervalSince1970:0]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@5182], [NSDate dateWithTimeIntervalSince1970:0.018]);
+    XCTAssertEqualObjects([extractor unixDateForMillisecondsKey:@5183], [NSDate dateWithTimeIntervalSince1970:0.743]);
 }
 
 - (void)testDecimalNumberForKey

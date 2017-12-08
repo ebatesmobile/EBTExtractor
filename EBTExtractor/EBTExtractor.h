@@ -44,6 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable NSNumber *)numberForKey:(id)key; // truncated to integer representation
 - (nullable NSString *)stringForKey:(id)key;
 - (nullable NSDate *)unixDateForKey:(id)key;
+- (nullable NSDate *)unixDateForMillisecondsKey:(id)key;
 - (nullable NSDecimalNumber *)decimalNumberForKey:(id)key; // never returns NaN
 - (nullable NSArray *)arrayForKey:(id)key;
 - (nullable NSDictionary *)dictionaryForKey:(id)key;
@@ -72,6 +73,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSNumber *)forcedNumberForKey:(id)key; // truncated to integer representation
 - (NSString *)forcedStringForKey:(id)key;
 - (NSDate *)forcedUnixDateForKey:(id)key;
+- (NSDate *)forcedUnixDateForMillisecondsKey:(id)key;
 - (NSDecimalNumber *)forcedDecimalNumberForKey:(id)key; // may return NaN
 - (NSArray *)forcedArrayForKey:(id)key;
 - (NSDictionary *)forcedDictionaryForKey:(id)key;

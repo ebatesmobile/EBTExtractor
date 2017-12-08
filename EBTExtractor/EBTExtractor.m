@@ -130,9 +130,25 @@
     return [self.class unixDateFromObject:self.dictionary[key]];
 }
 
+- (NSDate *)unixDateForMillisecondsKey:(id)key
+{
+    NSDecimalNumber *milliseconds = [self.class _transformObject:self.dictionary[key] toClass:[NSDecimalNumber class]];
+    if (milliseconds) {
+        milliseconds = [milliseconds decimalNumberByDividingBy:[[NSDecimalNumber alloc] initWithDouble:1000]];
+        return [self.class unixDateFromObject:milliseconds];
+    }
+
+    return [self.class unixDateFromObject:self.dictionary[key]];
+}
+
 - (NSDate *)forcedUnixDateForKey:(id)key
 {
     return [self.class unixDateFromObject:self.dictionary[key]] ?: [NSDate dateWithTimeIntervalSince1970:0];
+}
+
+- (NSDate *)forcedUnixDateForMillisecondsKey:(id)key
+{
+    return [self unixDateForMillisecondsKey:key] ?: [NSDate dateWithTimeIntervalSince1970:0];
 }
 
 + (NSDate *)unixDateFromObject:(id)object
