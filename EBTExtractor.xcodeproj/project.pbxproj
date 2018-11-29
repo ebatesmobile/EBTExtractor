@@ -241,9 +241,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 313B78EE1AE2E05700629726 /* Build configuration list for PBXNativeTarget "Extractor" */;
 			buildPhases = (
+				313B78D41AE2E05700629726 /* Headers */,
 				313B78D21AE2E05700629726 /* Sources */,
 				313B78D31AE2E05700629726 /* Frameworks */,
-				313B78D41AE2E05700629726 /* Headers */,
 				313B78D51AE2E05700629726 /* Resources */,
 			);
 			buildRules = (
