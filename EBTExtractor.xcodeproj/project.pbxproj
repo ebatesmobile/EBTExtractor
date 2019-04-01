@@ -335,7 +335,7 @@
 		31030FB41A8DAC14001FAFD9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Ebates Inc.";
 				TargetAttributes = {
 					313B78D61AE2E05700629726 = {
@@ -357,10 +357,11 @@
 			};
 			buildConfigurationList = 31030FB71A8DAC14001FAFD9 /* Build configuration list for PBXProject "EBTExtractor" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 31030FB31A8DAC14001FAFD9;
 			productRefGroup = 31030FBD1A8DAC14001FAFD9 /* Products */;
