@@ -21,11 +21,11 @@
 		31B12FFD1B7934DD00C04419 /* ExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 313B78E81AE2E05700629726 /* ExtractorTests.m */; };
 		31B12FFE1B7934DD00C04419 /* EBTExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */; };
 		31B12FFF1B7934DD00C04419 /* EBTExtractorSubclassingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */; };
-		31B130011B79356B00C04419 /* Extractor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31DD04C51B79334800C63ABE /* Extractor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		31B130011B79356B00C04419 /* Extractor-OSX.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 31DD04C51B79334800C63ABE /* Extractor-OSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		31D0020F1AE4BC420074D7C3 /* EBTExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31030FD61A8DAD0E001FAFD9 /* EBTExtractorTests.m */; };
 		31D002101AE4BC490074D7C3 /* EBTExtractorSubclassingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */; };
 		31D002131AE4C42E0074D7C3 /* Extractor.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 313B78D71AE2E05700629726 /* Extractor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		31DD04CF1B79334900C63ABE /* Extractor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31DD04C51B79334800C63ABE /* Extractor.framework */; };
+		31DD04CF1B79334900C63ABE /* Extractor-OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31DD04C51B79334800C63ABE /* Extractor-OSX.framework */; };
 		31F7F62C1B7931B700F542D6 /* Extractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 313B78DB1AE2E05700629726 /* Extractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31F7F62D1B7931BB00F542D6 /* EBTExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 31030FBF1A8DAC14001FAFD9 /* EBTExtractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		31F7F62E1B7931BF00F542D6 /* EBTExtractor+DirectObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 799923751AE17F5A00A131F1 /* EBTExtractor+DirectObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,7 +56,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				31B130011B79356B00C04419 /* Extractor.framework in CopyFiles */,
+				31B130011B79356B00C04419 /* Extractor-OSX.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +84,7 @@
 		313B78E81AE2E05700629726 /* ExtractorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExtractorTests.m; sourceTree = "<group>"; };
 		3161A2E61BA22B79000D3387 /* ExtractorWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtractorWatch.h; sourceTree = "<group>"; };
 		31ADCE151A9870B200C16063 /* EBTExtractorSubclassingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EBTExtractorSubclassingTests.m; sourceTree = "<group>"; };
-		31DD04C51B79334800C63ABE /* Extractor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Extractor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31DD04C51B79334800C63ABE /* Extractor-OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Extractor-OSX.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31DD04CE1B79334800C63ABE /* Extractor-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Extractor-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F7F6241B79314900F542D6 /* ExtractorWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExtractorWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		799923751AE17F5A00A131F1 /* EBTExtractor+DirectObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EBTExtractor+DirectObject.h"; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31DD04CF1B79334900C63ABE /* Extractor.framework in Frameworks */,
+				31DD04CF1B79334900C63ABE /* Extractor-OSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +147,7 @@
 				313B78D71AE2E05700629726 /* Extractor.framework */,
 				313B78E11AE2E05700629726 /* ExtractorTests.xctest */,
 				31F7F6241B79314900F542D6 /* ExtractorWatch.framework */,
-				31DD04C51B79334800C63ABE /* Extractor.framework */,
+				31DD04C51B79334800C63ABE /* Extractor-OSX.framework */,
 				31DD04CE1B79334800C63ABE /* Extractor-OSXTests.xctest */,
 			);
 			name = Products;
@@ -289,7 +289,7 @@
 			);
 			name = "Extractor-OSX";
 			productName = "Extractor-OSX";
-			productReference = 31DD04C51B79334800C63ABE /* Extractor.framework */;
+			productReference = 31DD04C51B79334800C63ABE /* Extractor-OSX.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		31DD04CD1B79334800C63ABE /* Extractor-OSXTests */ = {
@@ -708,7 +708,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebates.Extractor;
-				PRODUCT_NAME = Extractor;
+				PRODUCT_NAME = "Extractor-OSX";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -732,7 +732,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebates.Extractor;
-				PRODUCT_NAME = Extractor;
+				PRODUCT_NAME = "Extractor-OSX";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -970,7 +970,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ebates.Extractor;
-				PRODUCT_NAME = Extractor;
+				PRODUCT_NAME = "Extractor-OSX";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
