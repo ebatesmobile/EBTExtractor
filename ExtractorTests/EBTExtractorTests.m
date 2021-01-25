@@ -141,7 +141,7 @@
       @"dictionaryNumberStringA" : @{ @1 : @"single", @2 : @"double" , @3 : @"triple" },
       @"dictionaryMixMixA" : @{ @"Anna" : @"ant", @5 : @"fizz", @"Tom" : @8, @"no-more" : [NSNull null] },
       
-      @"garbageA" : NSClassFromString(NSStringFromClass([NSScanner class])),
+      @"garbageA" : (NSScanner *)NSClassFromString(NSStringFromClass([NSScanner class])),
       @"garbageB" : [NSError errorWithDomain:@"test.domain" code:888 userInfo:nil],
       
       @5181 : @"fizzle",

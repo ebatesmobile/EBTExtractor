@@ -1,0 +1,22 @@
+name: Pull Request
+
+on: pull_request
+
+jobs:
+  build:
+
+    runs-on: macos-10.15
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: xcode-select to correct Xcode version
+      run: |
+        xcode-select -print-path
+        sudo xcode-select -switch /Applications/Xcode_12.1.app
+        xcode-select -print-path
+    - name: Run XCUITest
+      run: |
+        set -o pipefail
+        xcodebuild clean build test -project EBTExtractor.xcodeproj -scheme Extractor CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=YES | xcpretty
+
+
