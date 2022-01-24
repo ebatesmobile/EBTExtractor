@@ -21,7 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "EBTExtractor.h"
+#import <Extractor/EBTExtractor.h>
 
 @interface EBTExtractor (DirectObject)
 
